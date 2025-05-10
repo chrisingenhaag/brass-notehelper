@@ -1,0 +1,52 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - run: npm ci
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+      - run: npm test
+      - run: npm run build --if-present
+      - name: Extract app version
+        id: appversion
+        run:
+          echo "app_version=$(npm run --silent currentversion 2> /dev/null)" >> $GITHUB_OUTPUT
+      - name: Log in to registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: '${{ github.actor }}'
+          password: '${{ secrets.GITHUB_TOKEN }}'
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: 'ghcr.io/chrisingenhaag/brass-notehelper:${{ steps.appversion.outputs.app_version }}'
+      - name: Setup git config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+      - name: Bump version
+        run: |
+          npm version patch -m "[skip ci] release"
+          git push origin main
+          git push --tags origin main
+
