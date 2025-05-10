@@ -37,10 +37,34 @@
     }
   }
 
+  let touchStartY = 0;
+  const TOUCH_SENSITIVITY = 30; // pixels needed to trigger a note change
+
+  function handleTouchStart(event: TouchEvent) {
+    touchStartY = event.touches[0].clientY;
+  }
+
+  function handleTouchMove(event: TouchEvent) {
+    event.preventDefault(); // Prevent scrolling
+    const touchCurrentY = event.touches[0].clientY;
+    const deltaY = touchCurrentY - touchStartY;
+
+    if (Math.abs(deltaY) > TOUCH_SENSITIVITY) {
+      if (deltaY < 0) {
+        // Swipe up
+        notePosition = Math.max(-13, notePosition - 1);
+      } else {
+        // Swipe down
+        notePosition = Math.min(4, notePosition + 1);
+      }
+      touchStartY = touchCurrentY;
+    }
+  }
+
   onMount(() => {
     window.addEventListener('keydown', handleKeydown);
     return () => {
-      window.addEventListener('keydown', handleKeydown);
+      window.removeEventListener('keydown', handleKeydown);
     };
   });
 
@@ -75,7 +99,11 @@
   {/if}
 </div>
 
-<div class="staff-container">
+<div 
+  class="staff-container"
+  on:touchstart={handleTouchStart}
+  on:touchmove={handleTouchMove}
+>
   <svg width="400" height="400">
     <!-- Bass Clef Symbol -->
     <!--
@@ -145,6 +173,7 @@
     justify-content: center;
     align-items: center;
     margin: 2rem;
+    touch-action: none; /* Prevent browser touch handling */
   }
 
   svg {
