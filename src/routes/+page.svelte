@@ -1,14 +1,39 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
+  import { getTrombonePosition, isValidNote } from '$lib/trombonePositions';
 
   let notePosition = 0;
-  const LINE_SPACING = 20; // Doubled from 10
+  const LINE_SPACING = 20;
   
+  // Note mapping for bass clef (position 0 = H/B)
+  const noteNames = new Map([
+    [4, 'E'],
+    [3, 'F'],
+    [2, 'G'],
+    [1, 'A'],
+    [0, 'H'],
+    [-1, 'c'],
+    [-2, 'd'],
+    [-3, 'e'],
+    [-4, 'f'],
+    [-5, 'g'],
+    [-6, 'a'],
+    [-7, 'h'],
+    [-8, 'c\''],
+    [-9, 'd\''],
+    [-10, 'e\''],
+    [-11, 'f\''],
+    [-12, 'g\''],
+    [-13, 'a\'']
+  ]);
+
+  $: currentNote = noteNames.get(notePosition) || '';
+
   function handleKeydown(event) {
     if (event.key === 'ArrowUp') {
-      notePosition = Math.max(-12, notePosition - 1);
+      notePosition = Math.max(-13, notePosition - 1);
     } else if (event.key === 'ArrowDown') {
-      notePosition = Math.min(8, notePosition + 1);
+      notePosition = Math.min(4, notePosition + 1);
     }
   }
 
@@ -36,11 +61,19 @@
         ledgerLines.push(200 + (pos * LINE_SPACING / 2));
       }
     }
-    console.log('Ledger Lines:', ledgerLines);
   }
+
+  $: trombonePositions = isValidNote(currentNote) ? getTrombonePosition(currentNote) : [];
 </script>
 
 <h1>Note Helper</h1>
+
+<div class="note-value">
+  {currentNote}
+  {#if trombonePositions.length > 0}
+    <span class="position">({trombonePositions.join(' or ')})</span>
+  {/if}
+</div>
 
 <div class="staff-container">
   <svg width="400" height="400">
@@ -121,5 +154,17 @@
   h1 {
     text-align: center;
     margin-bottom: 2rem;
+  }
+
+  .note-value {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .position {
+    font-size: 1.5rem;
+    color: #666;
+    margin-left: 1rem;
   }
 </style>
