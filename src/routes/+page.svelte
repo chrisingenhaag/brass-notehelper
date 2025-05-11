@@ -61,6 +61,19 @@
     }
   }
 
+  function handleWheel(event: WheelEvent) {
+    event.preventDefault();
+    
+    // Detect scroll direction
+    if (event.deltaY < 0) {
+      // Scroll up
+      notePosition = Math.max(-13, notePosition - 1);
+    } else {
+      // Scroll down
+      notePosition = Math.min(4, notePosition + 1);
+    }
+  }
+
   onMount(() => {
     window.addEventListener('keydown', handleKeydown);
     return () => {
@@ -90,7 +103,12 @@
   $: trombonePositions = isValidNote(currentNote) ? getTrombonePosition(currentNote) : [];
 </script>
 
-<h1>Note Helper</h1>
+<h1>Notenhelferlein</h1>
+
+<div class="descriptions">
+<p>Drücke die Pfeiltasten oder wische nach oben/unten, um die Note zu ändern.</p>
+<p>Aktuell für Posaune. Andere Instrumente folgen.</p>
+</div>
 
 <div class="note-value">
   {currentNote}
@@ -103,6 +121,7 @@
   class="staff-container"
   on:touchstart={handleTouchStart}
   on:touchmove={handleTouchMove}
+  on:wheel|preventDefault={handleWheel}
 >
   <svg width="400" height="400">
     <!-- Bass Clef Symbol -->
@@ -174,6 +193,7 @@
     align-items: center;
     margin: 2rem;
     touch-action: none; /* Prevent browser touch handling */
+    overflow: hidden; /* Prevent page scrolling when using wheel */
   }
 
   svg {
@@ -181,6 +201,12 @@
   }
 
   h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 4rem;
+  }
+
+  .descriptions {
     text-align: center;
     margin-bottom: 2rem;
   }
