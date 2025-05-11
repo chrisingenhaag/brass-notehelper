@@ -1,11 +1,13 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { getNextNote, getPreviousNote, getStaffPosition, getTrombonePosition, isValidNote, type Note } from '$lib/trombonePositions';
+  import { getNextNote, getNoteFromString, getPreviousNote, getStaffPosition, getTrombonePosition, isValidNote, type Accidental, type Note } from '$lib/trombonePositions';
 
   let selectedNote: Note = 'B';
+  
   const LINE_SPACING = 20;
 
   $: currentNote = selectedNote;
+  $: currentAccidental = getNoteFromString(selectedNote)?.accidental;
 
   function handleKeydown(event) {
     if (event.key === 'ArrowUp') {
@@ -141,7 +143,17 @@
         stroke-width="1.5"
       />
     {/each}
-    
+
+    <!-- Accidental -->
+    {#if currentAccidental}
+      <text 
+        x={165} 
+        y={noteY + 8} 
+        class="accidental-symbol" 
+        fill="black"
+      >{currentAccidental}</text>
+    {/if}
+
     <!-- Note -->
     <ellipse 
       cx="200" 
@@ -199,5 +211,10 @@
     font-size: 1.5rem;
     color: #666;
     margin-left: 1rem;
+  }
+
+  .accidental-symbol {
+    font-family: "Times New Roman", serif;
+    font-size: 36px;
   }
 </style>
