@@ -1,39 +1,17 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { getTrombonePosition, isValidNote } from '$lib/trombonePositions';
+  import { getNextNote, getPreviousNote, getStaffPosition, getTrombonePosition, isValidNote, type Note } from '$lib/trombonePositions';
 
-  let notePosition = 0;
+  let selectedNote: Note = 'B';
   const LINE_SPACING = 20;
-  
-  // Note mapping for bass clef (position 0 = H/B)
-  const noteNames = new Map([
-    [4, 'E'],
-    [3, 'F'],
-    [2, 'G'],
-    [1, 'A'],
-    [0, 'H'],
-    [-1, 'c'],
-    [-2, 'd'],
-    [-3, 'e'],
-    [-4, 'f'],
-    [-5, 'g'],
-    [-6, 'a'],
-    [-7, 'h'],
-    [-8, 'c\''],
-    [-9, 'd\''],
-    [-10, 'e\''],
-    [-11, 'f\''],
-    [-12, 'g\''],
-    [-13, 'a\'']
-  ]);
 
-  $: currentNote = noteNames.get(notePosition) || '';
+  $: currentNote = selectedNote;
 
   function handleKeydown(event) {
     if (event.key === 'ArrowUp') {
-      notePosition = Math.max(-13, notePosition - 1);
+      selectedNote = getNextNote(currentNote);
     } else if (event.key === 'ArrowDown') {
-      notePosition = Math.min(4, notePosition + 1);
+      selectedNote = getPreviousNote(currentNote);
     }
   }
 
@@ -52,10 +30,10 @@
     if (Math.abs(deltaY) > TOUCH_SENSITIVITY) {
       if (deltaY < 0) {
         // Swipe up
-        notePosition = Math.max(-13, notePosition - 1);
+        selectedNote = getNextNote(currentNote);
       } else {
         // Swipe down
-        notePosition = Math.min(4, notePosition + 1);
+        selectedNote = getPreviousNote(currentNote);
       }
       touchStartY = touchCurrentY;
     }
@@ -67,10 +45,10 @@
     // Detect scroll direction
     if (event.deltaY < 0) {
       // Scroll up
-      notePosition = Math.max(-13, notePosition - 1);
+      selectedNote = getNextNote(currentNote);
     } else {
       // Scroll down
-      notePosition = Math.min(4, notePosition + 1);
+      selectedNote = getPreviousNote(currentNote);
     }
   }
 
@@ -81,20 +59,20 @@
     };
   });
 
-  $: noteY = 200 + (notePosition * LINE_SPACING / 2); // Adjusted center point
+  $: noteY = 200 + (getStaffPosition(currentNote) * LINE_SPACING / 2); // Adjusted center point
 
   // Calculate which ledger lines should be visible
   $: ledgerLines = [];
   $: {
-    console.log('Note Position:', notePosition);
+    console.log('current note:', currentNote);
     ledgerLines = [];
-    if (notePosition <= -8) {
-      for (let pos = -8; pos >= notePosition; pos -= 2) {
+    if (getStaffPosition(currentNote) <= -8) {
+      for (let pos = -8; pos >= getStaffPosition(currentNote); pos -= 2) {
         ledgerLines.push(200 + (pos * LINE_SPACING / 2));
       }
-    } else if (notePosition >= 4) {
+    } else if (getStaffPosition(currentNote) >= 4) {
       // Start from 6 instead of 4 to get the first line correct
-      for (let pos = 4; pos <= notePosition; pos += 2) {
+      for (let pos = 4; pos <= getStaffPosition(currentNote); pos += 2) {
         ledgerLines.push(200 + (pos * LINE_SPACING / 2));
       }
     }
