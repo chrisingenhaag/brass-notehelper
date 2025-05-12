@@ -61,21 +61,21 @@
     };
   });
 
-  $: noteY = 200 + (getStaffPosition(currentNote) * LINE_SPACING / 2); // Adjusted center point
+  $: noteY = 180 + (getStaffPosition(currentNote) * LINE_SPACING / 2); // Adjusted center point
 
   // Calculate which ledger lines should be visible
   $: ledgerLines = [];
   $: {
-    console.log('current note:', currentNote);
+    //console.log('current note:', currentNote);
     ledgerLines = [];
     if (getStaffPosition(currentNote) <= -8) {
       for (let pos = -8; pos >= getStaffPosition(currentNote); pos -= 2) {
-        ledgerLines.push(200 + (pos * LINE_SPACING / 2));
+        ledgerLines.push(180 + (pos * LINE_SPACING / 2));
       }
     } else if (getStaffPosition(currentNote) >= 4) {
       // Start from 6 instead of 4 to get the first line correct
       for (let pos = 4; pos <= getStaffPosition(currentNote); pos += 2) {
-        ledgerLines.push(200 + (pos * LINE_SPACING / 2));
+        ledgerLines.push(180 + (pos * LINE_SPACING / 2));
       }
     }
   }
@@ -87,11 +87,10 @@
   <title>Notenhelferlein</title>
 </svelte:head>
 
-<h1>Notenhelferlein</h1>
-
 <div class="descriptions">
-<p>Wische oder scrolle, um die Note zu ändern.</p>
-<p>Gewähltes Instrument: <b>Posaune</b> (Andere Instrumente folgen)</p>
+  <p>Wische oder scrolle, um die Note zu ändern.</p>
+  <p>Gewähltes Instrument: <b>Posaune</b> (Andere Instrumente folgen)</p>
+  <note style="color: grey;">(Bassschlüssel wird noch ergänzt)</note>
 </div>
 
 <div class="note-value">
@@ -109,32 +108,17 @@
 >
   <svg viewBox="0 0 400 275" preserveAspectRatio="xMidYMid meet">
     <!-- Bass Clef Symbol -->
-    <!--
-    <path 
-      d="M45,180 
-         C55,180 63,173 63,165 
-         C63,157 55,150 45,150 
-         C35,150 27,157 27,165 
-         C27,173 35,180 45,180 
-         M45,150 
-         C45,150 65,162 65,180 
-         C65,200 45,220 45,220 
-         C45,220 75,215 85,180"
-      fill="none"
-      stroke="black"
-      stroke-width="2.5"
-    />-->
-    
+
     <!-- F clef dots -->
+    <circle cx="95" cy="130" r="3" fill="black"/>
     <circle cx="95" cy="150" r="3" fill="black"/>
-    <circle cx="95" cy="170" r="3" fill="black"/>
     
     <!-- Staff Lines -->
+    <line x1="20" y1="120" x2="380" y2="120" stroke="black" />
     <line x1="20" y1="140" x2="380" y2="140" stroke="black" />
     <line x1="20" y1="160" x2="380" y2="160" stroke="black" />
     <line x1="20" y1="180" x2="380" y2="180" stroke="black" />
     <line x1="20" y1="200" x2="380" y2="200" stroke="black" />
-    <line x1="20" y1="220" x2="380" y2="220" stroke="black" />
     
     <!-- Ledger Lines -->
     {#each ledgerLines as y}
@@ -218,12 +202,12 @@
   .descriptions {
     text-align: center;
     margin-bottom: 2rem;
+    margin-top: 2rem;
   }
 
   .note-value {
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 1rem;
   }
 
   .position {
