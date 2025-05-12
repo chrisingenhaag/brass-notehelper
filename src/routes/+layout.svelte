@@ -23,7 +23,7 @@
 
   <footer class="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
   <aside>
-    <p>Copyright © {new Date().getFullYear()} - <a href="https://github.com/chrisingenhaag/brass-notehelper">https://github.com/chrisingenhaag/brass-notehelper</a></p>
+    <p>Copyright © {new Date().getFullYear()} - <a href="https://github.com/chrisingenhaag/brass-notehelper">chrisingenhaag/brass-notehelper</a></p>
   </aside>
 </footer>
 </div>

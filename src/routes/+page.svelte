@@ -90,7 +90,6 @@
 <div class="descriptions">
   <p>Wische oder scrolle, um die Note zu ändern.</p>
   <p>Gewähltes Instrument: <b>Posaune</b> (Andere Instrumente folgen)</p>
-  <note style="color: grey;">(Bassschlüssel wird noch ergänzt)</note>
 </div>
 
 <div class="note-value">
@@ -106,7 +105,7 @@
   on:touchmove={handleTouchMove}
   on:wheel|preventDefault={handleWheel}
 >
-  <svg viewBox="0 0 400 275" preserveAspectRatio="xMidYMid meet">
+  <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
     <!-- Bass Clef Symbol -->
 
     <!-- F clef dots -->
@@ -201,7 +200,6 @@
 
   .descriptions {
     text-align: center;
-    margin-bottom: 2rem;
     margin-top: 2rem;
   }
 
