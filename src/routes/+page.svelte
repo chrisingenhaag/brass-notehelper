@@ -107,7 +107,7 @@
   on:touchmove={handleTouchMove}
   on:wheel|preventDefault={handleWheel}
 >
-  <svg width="400" height="275">
+  <svg viewBox="0 0 400 275" preserveAspectRatio="xMidYMid meet">
     <!-- Bass Clef Symbol -->
     <!--
     <path 
@@ -198,10 +198,15 @@
     align-items: center;
     touch-action: none; /* Prevent browser touch handling */
     overflow: hidden; /* Prevent page scrolling when using wheel */
+    width: 100%; /* Make container full width */
+    max-width: 800px; /* Optional: limit maximum width */
+    margin: 0 auto; /* Center horizontally */
   }
 
   svg {
     background-color: #f0f0f0;
+    width: 100%; /* Make SVG fill container */
+    height: auto; /* Maintain aspect ratio */
   }
 
   h1 {
