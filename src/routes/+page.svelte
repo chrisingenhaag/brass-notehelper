@@ -18,7 +18,7 @@
   }
 
   let touchStartY = 0;
-  const TOUCH_SENSITIVITY = 30; // pixels needed to trigger a note change
+  const TOUCH_SENSITIVITY = 25; // pixels needed to trigger a note change
 
   function handleTouchStart(event: TouchEvent) {
     touchStartY = event.touches[0].clientY;
