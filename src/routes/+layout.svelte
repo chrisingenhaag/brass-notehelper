@@ -7,7 +7,7 @@
 <div class="container mx-auto shadow-md lg:w-1/2 max-w-prose bg-white">
 	<div class="navbar bg-base-100 shadow-sm">
     <div class="flex-1">
-      <a class="btn btn-ghost text-xl">Notenhelferlein</a>
+      <span class="text-xl">Notenhelferlein</span>
     </div>
     <div class="flex-none">
       <div class="dropdown dropdown-end">
