@@ -83,11 +83,15 @@
   $: trombonePositions = isValidNote(currentNote) ? getTrombonePosition(currentNote) : [];
 </script>
 
+<svelte:head>
+  <title>Notenhelferlein</title>
+</svelte:head>
+
 <h1>Notenhelferlein</h1>
 
 <div class="descriptions">
-<p>Drücke die Pfeiltasten oder wische nach oben/unten, um die Note zu ändern.</p>
-<p>Aktuell für Posaune. Andere Instrumente folgen.</p>
+<p>Wische, scrolle oder nutze die Pfeiltasten, um die Note zu ändern.</p>
+<p>Gewähltes Instrument: <b>Posaune</b> (Andere Instrumente folgen)</p>
 </div>
 
 <div class="note-value">
@@ -103,7 +107,7 @@
   on:touchmove={handleTouchMove}
   on:wheel|preventDefault={handleWheel}
 >
-  <svg width="400" height="400">
+  <svg width="400" height="275">
     <!-- Bass Clef Symbol -->
     <!--
     <path 
@@ -165,14 +169,25 @@
     />
     
     <!-- Note stem -->
-    <line 
-      x1="212" 
-      y1={noteY} 
-      x2="212" 
-      y2={noteY - 70} 
-      stroke="black" 
-      stroke-width="3"
-    />
+    {#if getStaffPosition(currentNote) >= -2}
+      <line 
+        x1="212" 
+        y1={noteY} 
+        x2="212" 
+        y2={noteY - 70} 
+        stroke="black" 
+        stroke-width="3"
+      />
+    {:else}
+      <line 
+        x1="188" 
+        y1={noteY} 
+        x2="188" 
+        y2={noteY + 70} 
+        stroke="black" 
+        stroke-width="3"
+      />
+    {/if}
   </svg>
 </div>
 
@@ -181,19 +196,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2rem;
     touch-action: none; /* Prevent browser touch handling */
     overflow: hidden; /* Prevent page scrolling when using wheel */
   }
 
   svg {
-    background-color: white;
+    background-color: #f0f0f0;
   }
 
   h1 {
     text-align: center;
-    margin-bottom: 2rem;
-    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-size: 3rem;
   }
 
   .descriptions {
