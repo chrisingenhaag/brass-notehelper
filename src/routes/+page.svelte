@@ -90,7 +90,7 @@
 <h1>Notenhelferlein</h1>
 
 <div class="descriptions">
-<p>Wische, scrolle oder nutze die Pfeiltasten, um die Note zu ändern.</p>
+<p>Wische oder scrolle, um die Note zu ändern.</p>
 <p>Gewähltes Instrument: <b>Posaune</b> (Andere Instrumente folgen)</p>
 </div>
 
@@ -222,7 +222,7 @@
   }
 
   .position {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #666;
     margin-left: 1rem;
   }
