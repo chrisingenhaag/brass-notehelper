@@ -41,16 +41,22 @@
     }
   }
 
+  let scrolledAmount = 0;
+  const SCROLL_SENSITIVITY = 15; // pixels needed to trigger a note change
+
   function handleWheel(event: WheelEvent) {
-    event.preventDefault();
-    
-    // Detect scroll direction
-    if (event.deltaY < 0) {
-      // Scroll up
-      selectedNote = getNextNote(currentNote);
-    } else {
-      // Scroll down
-      selectedNote = getPreviousNote(currentNote);
+    event.preventDefault();    
+
+    scrolledAmount += event.deltaY;
+    if (Math.abs(scrolledAmount) > SCROLL_SENSITIVITY) {
+      if (event.deltaY < 0) {
+        // Scroll up
+        selectedNote = getNextNote(currentNote);
+      } else {
+        // Scroll down
+        selectedNote = getPreviousNote(currentNote);
+      }
+      scrolledAmount = 0; // Reset after processing
     }
   }
 
