@@ -90,12 +90,29 @@
 </script>
 
 <svelte:head>
-  <title>Notenhelferlein</title>
+  <title>Notenhelferlein - Interaktiver Notenhelfer für Posaune</title>
+  <meta name="description" content="Interaktiver Notenhelfer für Posaune. Lernen Sie die Positionen der Noten im Bassschlüssel und die entsprechenden Zugpositionen auf der Posaune." />
+  <meta name="keywords" content="Posaune, Notenhelfer, Bassschlüssel, Musikunterricht, Zugpositionen, Zugtabelle, Noten lernen, Musiktheorie, Posaunenunterricht" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Notenhelferlein - Interaktive Zugtabelle für Posaune" />
+  <meta property="og:description" content="Lernen Sie die Positionen der Noten im Bassschlüssel und die entsprechenden Zugpositionen auf der Posaune." />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Notenhelferlein - Interaktive Zugtabelle für Posaune" />
+  <meta name="twitter:description" content="Lernen Sie die Positionen der Noten im Bassschlüssel und die entsprechenden Zugpositionen auf der Posaune." />
+  
+  <!-- Additional Meta -->
+  <meta name="author" content="Christian Ingenhaag" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="language" content="de" />
 </svelte:head>
 
-<div class="descriptions">
-  <p>Wische oder scrolle, um die Note zu ändern.</p>
-  <p>Gewähltes Instrument: <b>Posaune</b> (Andere Instrumente folgen)</p>
+<div class="descriptions">‚
+  <p>Wische oder scrolle über die Note, um sie zu verändern.</p>
+  <p>Gewähltes Instrument: <b>Posaune</b></p>
 </div>
 
 <div class="note-value">
