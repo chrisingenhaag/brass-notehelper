@@ -4,7 +4,7 @@
 	let { children } = $props();
 </script>    
 
-<div class="container mx-auto shadow-md lg:w-1/2 max-w-prose bg-white">
+<div class="container mx-auto shadow-md lg:w-1/2 max-w-prose">
 	<div class="navbar bg-base-100 shadow-sm">
     <div class="flex-1">
       <span class="text-xl">Notenhelferlein</span>

@@ -216,7 +216,6 @@
 
   .position {
     font-size: 2rem;
-    color: #666;
     margin-left: 1rem;
   }
 
