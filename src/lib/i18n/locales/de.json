@@ -1,0 +1,16 @@
+{
+    "navTitle": "Notenhelferlein",
+    "title": "Notenhelferlein - Interaktiver Notenhelfer für Posaune",
+    "description": "Wische oder scrolle über die Note, um sie zu verändern.",
+    "instrument": "Gewähltes Instrument: Posaune",
+    "meta": {
+        "description": "Interaktiver Notenhelfer für Posaune. Lernen Sie die Positionen der Noten im Bassschlüssel und die entsprechenden Zugpositionen auf der Posaune.",
+        "keywords": "Posaune, Notenhelfer, Bassschlüssel, Musikunterricht, Zugpositionen"
+    },
+    "menu": {
+        "items": {
+            "settings": "Einstellungen",
+            "about": "Über"
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "navTitle": "brass helper",
+    "title": "Note Helper - Interactive Note Guide for Trombone",
+    "description": "Swipe or scroll over the note to change it.",
+    "instrument": "Selected instrument: Trombone",
+    "meta": {
+        "description": "Interactive note helper for trombone. Learn the positions of notes in bass clef and their corresponding trombone slide positions.",
+        "keywords": "trombone, note helper, bass clef, music education, slide positions"
+    },
+    "menu": {
+        "items": {
+            "settings": "settings",
+            "about": "about"
+        }
+    }
+}

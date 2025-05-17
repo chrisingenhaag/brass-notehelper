@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { getNextNote, getNoteFromString, getPreviousNote, getStaffPosition, getTrombonePosition, isValidNote, type Accidental, type Note } from '$lib/trombonePositions';
+  import { _ } from 'svelte-i18n';
 
   let selectedNote: Note = 'B';
   
@@ -90,9 +91,9 @@
 </script>
 
 <svelte:head>
-  <title>Notenhelferlein - Interaktiver Notenhelfer für Posaune</title>
-  <meta name="description" content="Interaktiver Notenhelfer für Posaune. Lernen Sie die Positionen der Noten im Bassschlüssel und die entsprechenden Zugpositionen auf der Posaune." />
-  <meta name="keywords" content="Posaune, Notenhelfer, Bassschlüssel, Musikunterricht, Zugpositionen, Zugtabelle, Noten lernen, Musiktheorie, Posaunenunterricht" />
+  <title>{$_('title')}</title>
+  <meta name="description" content={$_('meta.description')} />
+  <meta name="keywords" content={$_('meta.keywords')} />
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -110,9 +111,9 @@
   <meta name="language" content="de" />
 </svelte:head>
 
-<div class="descriptions">‚
-  <p>Wische oder scrolle über die Note, um sie zu verändern.</p>
-  <p>Gewähltes Instrument: <b>Posaune</b></p>
+<div class="descriptions">
+  <p>{$_('description')}</p>
+  <p>{$_('instrument')}</p>
 </div>
 
 <div class="note-value">
@@ -213,12 +214,6 @@
     background-color: #f0f0f0;
     width: 100%; /* Make SVG fill container */
     height: auto; /* Maintain aspect ratio */
-  }
-
-  h1 {
-    text-align: center;
-    margin-bottom: 1rem;
-    font-size: 3rem;
   }
 
   .descriptions {
