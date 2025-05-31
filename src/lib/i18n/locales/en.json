@@ -1,16 +1,47 @@
 {
     "navTitle": "brass helper",
-    "title": "Note Helper - Interactive Note Guide for Trombone",
+    "title": "Note Helper - Interactive Note Guide for brass instruments",
     "description": "Swipe or scroll over the note to change it.",
-    "instrument": "Selected instrument: Trombone",
+    "instrumentPrefix": "Selected instrument:",
+    "welcome": {
+        "title": "Willkommen beim Notenhelferlein",
+        "description": "Wähle ein Instrument aus, um passende Noten und Positionen zu entdecken."
+    },
     "meta": {
         "description": "Interactive note helper for trombone. Learn the positions of notes in bass clef and their corresponding trombone slide positions.",
         "keywords": "trombone, note helper, bass clef, music education, slide positions"
     },
     "menu": {
         "items": {
-            "settings": "settings",
+            "home": "Instruments",
             "about": "about"
         }
+    },
+    "instruments": {
+        "trombone": "Trombone",
+        "horn": "Horn"
+    },
+    "textElements": {
+        "or": "or"
+    },
+    "settings": {
+        "title": "Settings",
+        "instrument": "choosed instrument",
+        "back": "Back"
+    },
+    "about": {
+        "title": "Über Notenhelferlein",
+        "intro": "Notenhelferlein ist eine interaktive Lernhilfe für Blechbläser:innen, insbesondere für Posaune, Trompete und Horn.",
+        "featuresTitle": "Funktionen",
+        "feature1": "Zeigt Noten im Bassschlüssel auf einer Notenlinie an",
+        "feature2": "Visualisiert die passenden Zug- oder Ventilpositionen für das gewählte Instrument",
+        "feature3": "Blättern oder wischen Sie durch die Noten – ideal für Touch und Desktop",
+        "feature4": "Automatische Anpassung an verschiedene Instrumente",
+        "feature5": "Mehrsprachige Oberfläche (Deutsch/Englisch)",
+        "feature6": "Einfache Einstellungen für Instrument und Sprache",
+        "usageTitle": "Wie funktioniert es?",
+        "usage1": "Wählen Sie Ihr Instrument in den Einstellungen aus.",
+        "usage2": "Scrollen oder wischen Sie, um verschiedene Noten zu sehen.",
+        "usage3": "Die passenden Positionen werden direkt angezeigt."
     }
 }
