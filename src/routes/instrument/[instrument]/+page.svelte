@@ -1,8 +1,9 @@
 <script lang="ts">
   import type { PageProps } from './$types';
   import { onMount } from 'svelte';
-  import { getNextNote, getNoteFromString, getPreviousNote, getStaffPosition, getInstrumentPosition, Instrument, isValidNote, type Accidental, type Note } from '$lib/positionBase';
+  import { getNextNote, getNoteFromString, getPreviousNote, getStaffPosition, getInstrumentPosition, Instrument, isValidNote, type Note } from '$lib/positionBase';
   import { _ } from 'svelte-i18n';
+	import { NoteBases } from '$lib/instrumentPositions';
 
 	let { data }: PageProps = $props();
 
@@ -15,7 +16,7 @@
   let selectedNote: Note = $state('B');
 
   let currentNote = $derived(selectedNote);
-  let currentAccidental = $derived(getNoteFromString(selectedInstrument, selectedNote)?.accidental);
+  let currentAccidental = $derived(NoteBases.get(currentNote)?.accidental);
 
   function handleKeydown(event) {
     if (event.key === 'ArrowUp') {
