@@ -1,3 +1,10 @@
+# [0.2.0](https://github.com/chrisingenhaag/brass-notehelper/compare/v0.1.1...v0.2.0) (2025-06-01)
+
+
+### Features
+
+* ui improvements for text and layout ([c50be79](https://github.com/chrisingenhaag/brass-notehelper/commit/c50be792f9292810ef01a7add8dd574dbbb655d7))
+
 ## [0.1.1](https://github.com/chrisingenhaag/brass-notehelper/compare/v0.1.0...v0.1.1) (2025-06-01)
 
 
