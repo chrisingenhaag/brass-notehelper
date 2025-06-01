@@ -3,11 +3,11 @@
 </script>
 
 <section class="welcome">
-  <h1>{$_('welcome.title')}</h1>
+  <h1 class="text-2xl mb-1">{$_('welcome.title')}</h1>
   <p>
     {$_('welcome.description')}
   </p>
-  <nav class="instrument-links">
+  <nav class="instrument-links flex flex-col justify-center">
     <a href="/instrument/trombone">{$_('instruments.trombone')}</a>
     <a href="/instrument/tuba">{$_('instruments.tuba')}</a>
     <a href="/instrument/horn">{$_('instruments.horn')}</a>
@@ -26,8 +26,6 @@
   }
   .instrument-links {
     margin-top: 2rem;
-    display: flex;
-    justify-content: center;
     gap: 2rem;
   }
   .instrument-links a {
