@@ -7,7 +7,7 @@
   <p>
     {$_('welcome.description')}
   </p>
-  <nav class="instrument-links flex flex-col justify-center">
+  <nav class="instrument-links flex flex-col justify-center mt-4 gap-6">
     <a href="/instrument/trombone">{$_('instruments.trombone')}</a>
     <a href="/instrument/tuba">{$_('instruments.tuba')}</a>
     <a href="/instrument/horn">{$_('instruments.horn')}</a>
@@ -23,10 +23,6 @@
     border-radius: 10px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.06);
     text-align: center;
-  }
-  .instrument-links {
-    margin-top: 2rem;
-    gap: 2rem;
   }
   .instrument-links a {
     font-size: 1.2rem;

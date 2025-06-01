@@ -1,9 +1,8 @@
 <script lang="ts">
   import type { PageProps } from './$types';
   import { onMount } from 'svelte';
-  import { getNextNote, getPreviousNote, getStaffPosition, getInstrumentPosition, Instrument, isValidNote, type Note } from '$lib/positionBase';
+  import { getNextNote, getPreviousNote, getInstrumentPosition, Instrument, isValidNote, type Note } from '$lib/positionBase';
   import { _ } from 'svelte-i18n';
-	import { NoteBases } from '$lib/instrumentPositions';
   import StaffSystem from '$lib/components/StaffSystem.svelte';
 
 	let { data }: PageProps = $props();
@@ -79,7 +78,7 @@
   let trombonePositions = $derived(isValidNote(selectedInstrument, currentNote) ? getInstrumentPosition(selectedInstrument, currentNote) : []);
 </script>
 
-<div class="descriptions">
+<div class="mt-2 text-center">
   <p>{$_('description')}</p>
   <p>{$_('instrumentPrefix')} <b>{localizedInstrument}</b></p>
 </div>
@@ -92,7 +91,7 @@
 </div>
 
 <div 
-  class="staff-container"
+  class="staff-container flex justify-center"
   ontouchstart={handleTouchStart}
   ontouchmove={handleTouchMove}
   onwheel={handleWheel}
@@ -104,19 +103,11 @@
 
 <style>
   .staff-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     touch-action: none; /* Prevent browser touch handling */
     overflow: hidden; /* Prevent page scrolling when using wheel */
     width: 100%; /* Make container full width */
     max-width: 800px; /* Optional: limit maximum width */
     margin: 0 auto; /* Center horizontally */
-  }
-
-  .descriptions {
-    text-align: center;
-    margin-top: 2rem;
   }
 
   .note-value {

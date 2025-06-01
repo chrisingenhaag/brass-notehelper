@@ -31,7 +31,7 @@
 <div class="container mx-auto shadow-md lg:w-1/2 max-w-prose">
 	<div class="navbar bg-base-100 shadow-sm">
     <div class="flex-1">
-      <span class="text-xl">{$_('navTitle')}</span>
+      <span class="text-2xl">{$_('navTitle')}</span>
     </div>
     <div class="flex-none">
       <div class="dropdown dropdown-end">
@@ -42,8 +42,8 @@
       <ul
         tabindex="0"
         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a href="/">{$_('menu.items.home')}</a></li>
-        <li><a href="/about">{$_('menu.items.about')}</a></li>
+        <li><a class="text-base" href="/">{$_('menu.items.home')}</a></li>
+        <li><a class="text-base" href="/about">{$_('menu.items.about')}</a></li>
       </ul>
     </div>
     </div>
