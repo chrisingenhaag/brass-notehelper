@@ -19,7 +19,8 @@
     },
     "instruments": {
         "trombone": "Trombone",
-        "horn": "Horn"
+        "horn": "Horn",
+        "tuba": "Tuba"
     },
     "textElements": {
         "or": "or"
