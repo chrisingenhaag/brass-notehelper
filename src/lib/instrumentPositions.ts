@@ -208,3 +208,79 @@ export const hornCombinations: Combination[] = [
 
     { note : "b'", positions :[0]}
 ];
+
+export const tubaCombinations: Combination[] = [
+    { note: 'Es', positions: ['1/2/4']},
+    { note: 'E', positions: ['2/4']},
+    { note: 'Eis', positions: ['2/4']},
+
+    { note: 'Fes', positions: ['2/4']},
+    { note: 'F', positions: ['4']},
+    { note: 'Fis', positions: ['2/3']},
+
+    { note: 'Ges', positions: ['2/3']},
+    { note: 'G', positions: ['1/2']},
+    { note: 'Gis', positions: [1]},
+
+    { note: 'As ', positions: [1]},
+    { note: 'A', positions: [2]},
+    { note: 'Ais', positions: [0]},
+    
+    { note: 'B', positions: [0]},
+    { note: 'H', positions: ['2/4']},
+    { note: 'His', positions: ['2/4']},
+
+    { note: 'ces', positions: ['2/4']},
+    { note: 'c', positions: ['4']},
+    { note: 'cis', positions: ['2/3']},
+
+    { note: 'des', positions: ['2/3']},
+    { note: 'd', positions: ['1/2']},
+    { note: 'dis', positions: [1]},
+    
+    { note: 'es', positions: [1]},
+    { note: 'e', positions: [2, '2/4']},
+    { note: 'eis', positions: [2, '2/4'],},
+    
+    { note: 'fes', positions: [2, '2/4']},
+    { note: 'f', positions: [0, 4]},
+    { note: 'fis', positions: ['2/3']},
+    
+    { note: 'ges', positions: ['2/3']},
+    { note: 'g', positions: ['1/2', 3]},
+    { note: 'gis', positions: [1, '1/2/3']},
+    
+    { note: 'as', positions: [1, '1/2/3']},
+    { note: 'a', positions: [2, '1/3']},
+    { note: 'ais', positions: [0, '2/3']},
+    
+    { note: 'b', positions: [0, '2/3']},
+    { note: 'h', positions: ['1/2', 3]},
+    { note: 'his', positions: ['1/2', 3]},
+
+    { note: "ces'", positions: ['1/2', 3]},
+    { note: "c'", positions: [1, '1/3']},
+    { note: "cis'", positions: [2, '2/3']},
+    
+    { note: "des'", positions: [2, '2/3']},
+    { note: "d'", positions: [0, '1/2']},
+    { note: "dis'", positions: [1]},
+    
+    { note: "es'", positions: [1]},
+    { note: "e'", positions: [2, '1/2/3']},
+    { note: "eis'", positions: [2, '1/2/3']},
+    
+    { note: "fes'", positions: [2, '1/2/3']},
+    { note: "f'", positions: [0, '1/3']},
+    { note: "fis'", positions :['2/3']},
+    
+    { note : "ges'", positions :['2/3']},
+    { note : "g'", positions :['1/2', 3]},
+    { note : "gis'", positions :[1]},
+    
+    { note : "as'", positions :[1]},
+    { note : "a'", positions :[2]},
+    { note : "ais'", positions :[0]},
+
+    { note : "b'", positions :[0]}
+];

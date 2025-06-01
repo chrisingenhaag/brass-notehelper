@@ -9,6 +9,7 @@
   </p>
   <nav class="instrument-links">
     <a href="/instrument/trombone">{$_('instruments.trombone')}</a>
+    <a href="/instrument/tuba">{$_('instruments.tuba')}</a>
     <a href="/instrument/horn">{$_('instruments.horn')}</a>
   </nav>
 </section>

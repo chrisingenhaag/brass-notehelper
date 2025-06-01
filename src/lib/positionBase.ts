@@ -1,4 +1,4 @@
-import { hornCombinations, NoteBases, tromboneCombinations } from "./instrumentPositions";
+import { hornCombinations, NoteBases, tromboneCombinations, tubaCombinations } from "./instrumentPositions";
 
 export type Note = 
     'Cis' | 'C' |
@@ -47,6 +47,8 @@ function getCombinationsForInstrument(instrument: Instrument): Combination[] {
         return tromboneCombinations
     } else if (instrument === 'horn') {
         return hornCombinations
+    } else if (instrument === 'tuba') {
+        return tubaCombinations
     }
     throw new Error(`Unsupported instrument: ${instrument}`);
 }
