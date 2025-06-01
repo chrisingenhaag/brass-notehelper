@@ -77,18 +77,18 @@
     };
   });
 
-  let noteY = $derived(180 + (getStaffPosition(selectedInstrument, currentNote) * LINE_SPACING / 2)); // Adjusted center point
+  let noteY = $derived(180 + (getStaffPosition(currentNote) * LINE_SPACING / 2)); // Adjusted center point
 
   // Calculate which ledger lines should be visible
   let ledgerLines: number[] = $derived.by(() => {
     let ledgerLines = [];
-    if (getStaffPosition(selectedInstrument, currentNote) <= -8) {
-      for (let pos = -8; pos >= getStaffPosition(selectedInstrument, currentNote); pos -= 2) {
+    if (getStaffPosition(currentNote) <= -8) {
+      for (let pos = -8; pos >= getStaffPosition(currentNote); pos -= 2) {
         ledgerLines.push(180 + (pos * LINE_SPACING / 2));
       }
-    } else if (getStaffPosition(selectedInstrument, currentNote) >= 4) {
+    } else if (getStaffPosition(currentNote) >= 4) {
       // Start from 6 instead of 4 to get the first line correct
-      for (let pos = 4; pos <= getStaffPosition(selectedInstrument, currentNote); pos += 2) {
+      for (let pos = 4; pos <= getStaffPosition(currentNote); pos += 2) {
         ledgerLines.push(180 + (pos * LINE_SPACING / 2));
       }
     }
@@ -221,7 +221,7 @@
     />
     
     <!-- Note stem -->
-    {#if getStaffPosition(selectedInstrument, currentNote) >= -2}
+    {#if getStaffPosition(currentNote) >= -2}
       <line 
         x1="212" 
         y1={noteY} 

@@ -1,4 +1,4 @@
-import { hornCombinations, tromboneCombinations } from "./instrumentPositions";
+import { hornCombinations, NoteBases, tromboneCombinations } from "./instrumentPositions";
 
 export type Note = 
     'Cis' | 'C' |
@@ -26,11 +26,14 @@ export type Position = number | string
 
 export type Accidental = '♭' | '♯';
 
+export interface NoteInfo {
+    staffPosition: number;
+    accidental?: '♭' | '♯';
+}
+
 export interface Combination {
     note: Note;
     positions: Position[];
-    staffPosition: number;
-    accidental?: Accidental;
 }
 
 export enum Instrument {
@@ -72,8 +75,8 @@ export function getInstrumentPosition(instrument: Instrument, note: Note): Posit
     return positions;
 }
 
-export function getStaffPosition(instrument: Instrument, note: Note): number {
-    const staffPosition = getCombinationsForInstrument(instrument).find(combination => combination.note === note)?.staffPosition;
+export function getStaffPosition(note: Note): number {
+    const staffPosition = NoteBases.get(note)?.staffPosition;
     if (staffPosition === undefined) {
         throw new Error(`No staff position found for note: ${note}`);
     }
