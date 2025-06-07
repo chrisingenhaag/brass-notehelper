@@ -1,3 +1,10 @@
+## [0.2.1](https://github.com/chrisingenhaag/brass-notehelper/compare/v0.2.0...v0.2.1) (2025-06-07)
+
+
+### Bug Fixes
+
+* semantic release process triggering release build ([83fe2fd](https://github.com/chrisingenhaag/brass-notehelper/commit/83fe2fdcdc33eaeb28b6fd14684c87e443bcae97))
+
 # [0.2.0](https://github.com/chrisingenhaag/brass-notehelper/compare/v0.1.1...v0.2.0) (2025-06-01)
 
 
