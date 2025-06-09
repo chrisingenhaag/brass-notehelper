@@ -1,3 +1,10 @@
+## [0.2.3](https://github.com/chrisingenhaag/brass-notehelper/compare/v0.2.2...v0.2.3) (2025-06-09)
+
+
+### Bug Fixes
+
+* add missing release package write permission ([2ec0040](https://github.com/chrisingenhaag/brass-notehelper/commit/2ec004094b2c4a838abdf2ec49799014e762fb48))
+
 ## [0.2.2](https://github.com/chrisingenhaag/brass-notehelper/compare/v0.2.1...v0.2.2) (2025-06-09)
 
 
