@@ -21,7 +21,6 @@
         dockerFile: 'Dockerfile',
         dockerRegistry: 'ghcr.io',
         dockerProject: 'chrisingenhaag',
-        dockerPlatform: ['linux/amd64', 'linux/arm64'],
         dockerBuildFlags: {
           pull: null
         },
