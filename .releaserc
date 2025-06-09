@@ -12,6 +12,20 @@
         assets: ['package.json', 'CHANGELOG.md'],
         message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
       }
+    ],
+    [
+      '@codedependant/semantic-release-docker', 
+      {
+        dockerTags: ['latest', '{{version}}', '{{major}}-latest', '{{major}}.{{minor}}'],
+        dockerImage: 'brass-notehelper',
+        dockerFile: 'Dockerfile',
+        dockerRegistry: 'ghcr.io',
+        dockerProject: 'chrisingenhaag',
+        dockerPlatform: ['linux/amd64', 'linux/arm64'],
+        dockerBuildFlags: {
+          pull: null
+        },
+      }
     ]
   ]
 }
