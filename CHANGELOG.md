@@ -1,3 +1,10 @@
+## [0.2.2](https://github.com/chrisingenhaag/brass-notehelper/compare/v0.2.1...v0.2.2) (2025-06-09)
+
+
+### Bug Fixes
+
+* release build using docker plugin ([711567b](https://github.com/chrisingenhaag/brass-notehelper/commit/711567bcead4bbccfa6418c93f018100514c9e6c))
+
 ## [0.2.1](https://github.com/chrisingenhaag/brass-notehelper/compare/v0.2.0...v0.2.1) (2025-06-07)
 
 
