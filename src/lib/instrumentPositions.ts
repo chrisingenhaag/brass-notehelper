@@ -1,6 +1,6 @@
-import type { Combination, Note, NoteInfo } from "./positionBase";
+import { type Note, type Combination, type NoteInfo } from "./positionBase";
 
-export const NoteBases = new Map<Note, NoteInfo>([
+export const NoteBasesInBassClef = new Map<Note, NoteInfo>([
     ['Es', { staffPosition: 4, accidental: '♭' },],
     ['E', { staffPosition: 4 },],
     ['Eis', {  staffPosition: 4, accidental: '♯' },],
@@ -49,13 +49,13 @@ export const NoteBases = new Map<Note, NoteInfo>([
     ["fes'", { staffPosition: -11, accidental: '♭' },],
     ["f'", {  staffPosition: -11 },],
     ["fis'", { staffPosition : -11, accidental: '♯'},],
-    [ "ges'", { staffPosition : -12, accidental: '♭'},],
-    [ "g'", { staffPosition : -12},],
-    [ "gis'", { staffPosition : -12, accidental: '♯'},],
-    [ "as'", { staffPosition : -13, accidental: '♭'},],
-    [ "a'", { staffPosition : -13},],
-    [ "ais'", { staffPosition : -13, accidental: '♯'},],
-    [ "b'", { staffPosition : -14, accidental: '♭'}],
+    ["ges'", { staffPosition : -12, accidental: '♭'},],
+    ["g'", { staffPosition : -12},],
+    ["gis'", { staffPosition : -12, accidental: '♯'},],
+    ["as'", { staffPosition : -13, accidental: '♭'},],
+    ["a'", { staffPosition : -13},],
+    ["ais'", { staffPosition : -13, accidental: '♯'},],
+    ["b'", { staffPosition : -14, accidental: '♭'}],
 ]);
 
 export const tromboneCombinations: Combination[] = [

@@ -1,5 +1,10 @@
 <script lang="ts">
+	import { Instrument, instrumentStaffSystemMap } from '$lib/positionBase';
   import { _ } from 'svelte-i18n';
+
+  // iterate over Instrument enum to create a list of instruments
+  var instruments: Instrument[] = Object.values(Instrument);
+
 </script>
 
 <section class="welcome">
@@ -8,9 +13,9 @@
     {$_('welcome.description')}
   </p>
   <nav class="instrument-links flex flex-col justify-center mt-4 gap-6">
-    <a href="/instrument/trombone">{$_('instruments.trombone')}</a>
-    <a href="/instrument/tuba">{$_('instruments.tuba')}</a>
-    <a href="/instrument/horn">{$_('instruments.horn')}</a>
+    {#each instruments as instrument}
+      <a href="/instrument/{instrument}/{instrumentStaffSystemMap[instrument]}">{$_('instruments.' + instrument)}</a>
+    {/each}
   </nav>
 </section>
 
