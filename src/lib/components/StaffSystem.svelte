@@ -1,11 +1,13 @@
 <script lang="ts">
-	import { NoteBases } from "$lib/instrumentPositions";
-	import { getStaffPosition, type Note } from "$lib/positionBase";
+	import { NoteBasesInBassClef } from "$lib/instrumentPositions";
+	import { getStaffPosition, type Note, ScoreSystem } from "$lib/positionBase";
 
   let {
     note,
+    system
   }: {
     note: Note;
+    system: ScoreSystem
   } = $props();
 
   const LINE_SPACING = 20;
@@ -13,28 +15,29 @@
   // Calculate which ledger lines should be visible
   let ledgerLines: number[] = $derived.by(() => {
     let ledgerLines = [];
-    if (getStaffPosition(note) <= -8) {
-      for (let pos = -8; pos >= getStaffPosition(note); pos -= 2) {
+    if (getStaffPosition(note, system) <= -8) {
+      for (let pos = -8; pos >= getStaffPosition(note, system); pos -= 2) {
         ledgerLines.push(180 + (pos * LINE_SPACING / 2));
       }
-    } else if (getStaffPosition(note) >= 4) {
+    } else if (getStaffPosition(note, system) >= 4) {
       // Start from 6 instead of 4 to get the first line correct
-      for (let pos = 4; pos <= getStaffPosition(note); pos += 2) {
+      for (let pos = 4; pos <= getStaffPosition(note, system); pos += 2) {
         ledgerLines.push(180 + (pos * LINE_SPACING / 2));
       }
     }
     return ledgerLines;
   });
 
-  let noteY = $derived(180 + (getStaffPosition(note) * LINE_SPACING / 2)); // Adjusted center point
-  let currentAccidental = $derived(NoteBases.get(note)?.accidental);
+  let noteY = $derived(180 + (getStaffPosition(note, system) * LINE_SPACING / 2)); // Adjusted center point
+  let currentAccidental = $derived(NoteBasesInBassClef.get(note)?.accidental);
 
 
 </script>
 
 <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
-  <!-- Bass Clef Symbol (authentic, filled, with dots) -->
-  <path d="M 51,179
+  {#if system === ScoreSystem.Bass}  
+    <!-- Bass Clef Symbol (authentic, filled, with dots) -->
+    <path d="M 51,179
     C 55,176 58,174 60,173 
     C 63,171 66,169 68,167 
     C 70,165 72,161 74,158 
@@ -67,8 +70,9 @@
     C 78,163 74,169 69,173 
     C 65,176 59,179 51,182" 
     style="fill:#131516;stroke:#131516;stroke-width:0"/>
-  <circle cx="95" cy="130" r="3" fill="black"/>
-  <circle cx="95" cy="150" r="3" fill="black"/>
+    <circle cx="95" cy="130" r="3" fill="black"/>
+    <circle cx="95" cy="150" r="3" fill="black"/>
+  {/if}
 
   <!-- Staff Lines -->
   <line x1="20" y1="120" x2="380" y2="120" stroke="black" />
@@ -112,7 +116,7 @@
   />
 
   <!-- Note stem -->
-  {#if getStaffPosition(note) >= -2}
+  {#if getStaffPosition(note, system) >= -2}
     <line 
       x1="212" 
       y1={noteY} 

@@ -1,21 +1,22 @@
 <script lang="ts">
-  import type { PageProps } from './$types';
   import { onMount } from 'svelte';
-  import { getNextNote, getPreviousNote, getInstrumentPosition, Instrument, isValidNote, type Note } from '$lib/positionBase';
+  import { getNextNote, getPreviousNote, getInstrumentPosition, Instrument, isValidNote, type Note, type ScoreSystem } from '$lib/positionBase';
   import { _ } from 'svelte-i18n';
   import StaffSystem from '$lib/components/StaffSystem.svelte';
+	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 
   
   let selectedInstrument = data.instrument as Instrument; // Default instrument
+  let system = data.system as ScoreSystem
   let localizedInstrument = $_('instruments.' + selectedInstrument);
     
   let selectedNote: Note = $state('B');
 
   let currentNote = $derived(selectedNote);
 
-  function handleKeydown(event) {
+  function handleKeydown(event: { key: string; }) {
     if (event.key === 'ArrowUp') {
       selectedNote = getNextNote(selectedInstrument, currentNote);
     } else if (event.key === 'ArrowDown') {
@@ -75,7 +76,7 @@
     };
   });
 
-  let trombonePositions = $derived(isValidNote(selectedInstrument, currentNote) ? getInstrumentPosition(selectedInstrument, currentNote) : []);
+  let instrumentPositions = $derived(isValidNote(selectedInstrument, currentNote) ? getInstrumentPosition(selectedInstrument, currentNote) : []);
 </script>
 
 <div class="mt-2 text-center">
@@ -85,8 +86,8 @@
 
 <div class="note-value">
   {currentNote}
-  {#if trombonePositions.length > 0}
-    <span class="position">({trombonePositions.join(' '+$_('textElements.or')+' ')})</span>
+  {#if instrumentPositions.length > 0}
+    <span class="position">({instrumentPositions.join(' '+$_('textElements.or')+' ')})</span>
   {/if}
 </div>
 
@@ -98,6 +99,7 @@
 >
   <StaffSystem
     note={currentNote}
+    system={system}
   />
 </div>
 

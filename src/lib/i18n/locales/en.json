@@ -20,7 +20,8 @@
     "instruments": {
         "trombone": "Trombone",
         "horn": "Horn",
-        "tuba": "Tuba"
+        "tuba": "Tuba",
+        "trumpetc": "Trumpet (in C)"
     },
     "textElements": {
         "or": "or"

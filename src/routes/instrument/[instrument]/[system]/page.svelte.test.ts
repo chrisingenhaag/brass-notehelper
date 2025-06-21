@@ -3,6 +3,7 @@ import '@testing-library/jest-dom/vitest';
 import { render, screen } from '@testing-library/svelte';
 import Page from './+page.svelte';
 import { locale } from 'svelte-i18n';
+import { Instrument, ScoreSystem } from '$lib/positionBase';
 
 describe('/+page.svelte', () => {
 	locale.set('de');
@@ -11,7 +12,8 @@ describe('/+page.svelte', () => {
 	test('should render h1', () => {
 		render(Page, {
 			data: {
-				instrument: 'trombone'
+				instrument: Instrument.Trombone,
+				system: ScoreSystem.Bass
 			}
 		});
 		expect(screen.getByText('description')).toBeInTheDocument();
