@@ -1,4 +1,4 @@
-import { hornCombinations, NoteBasesInBassClef, tromboneCombinations, tubaCombinations } from "./instrumentPositions";
+import { hornCombinations, NoteBasesInBassClef, tromboneCombinations, trumpetCombinations, tubaCombinations } from "./instrumentPositions";
 
 export type Note = 
     'Cis' | 'C' |
@@ -59,7 +59,20 @@ export const instrumentStaffSystemMap: Record<Instrument, ScoreSystem> = {
     // Add other instruments here as needed
 };
 
-function getCombinationsForInstrument(instrument: Instrument): Combination[] {
+export function getStartNoteForInstrument(instrument: Instrument): Note {
+    if (instrument === Instrument.Trombone) {
+        return 'B';
+    } else if (instrument === Instrument.Horn) {
+        return 'B';
+    } else if (instrument === Instrument.Tuba) {
+        return 'B';
+    } else if (instrument === Instrument.Trumpetc) {
+        return "g'"
+    }
+    throw new Error(`Unsupported instrument: ${instrument}`);
+}
+
+export function getCombinationsForInstrument(instrument: Instrument): Combination[] {
     if (instrument === Instrument.Trombone) {
         return tromboneCombinations
     } else if (instrument === Instrument.Horn) {
@@ -67,7 +80,7 @@ function getCombinationsForInstrument(instrument: Instrument): Combination[] {
     } else if (instrument === Instrument.Tuba) {
         return tubaCombinations
     } else if (instrument === Instrument.Trumpetc) {
-        return []
+        return trumpetCombinations
     }
     throw new Error(`Unsupported instrument: ${instrument}`);
 }
@@ -91,7 +104,7 @@ export function getPreviousNote(instrument: Instrument, note: Note): Note {
 export function getInstrumentPosition(instrument: Instrument, note: Note): Position[] {
     const positions = getCombinationsForInstrument(instrument).find(combination => combination.note === note)?.positions;
     if (!positions) {
-        throw new Error(`No trombone position found for note: ${note}`);
+        throw new Error(`No position found for note: ${note}`);
     }
     return positions;
 }

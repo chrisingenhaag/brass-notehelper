@@ -58,6 +58,15 @@ export const NoteBasesInBassClef = new Map<Note, NoteInfo>([
     ["b'", { staffPosition : -14, accidental: '♭'}],
 ]);
 
+export const NoteBasesInTrebleClef = new Map<Note, NoteInfo>([
+    ["g'", { staffPosition: 0, accidental: '♭' }],
+]);
+
+export const trumpetCombinations: Combination[] = [
+    { note: "g'", positions: ['1/2'] },
+];
+
+
 export const tromboneCombinations: Combination[] = [
     { note: 'Es', positions: ['Q3-'] },
     { note: 'E', positions: [7]},
