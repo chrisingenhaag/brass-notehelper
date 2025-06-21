@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { getNextNote, getPreviousNote, getInstrumentPosition, Instrument, isValidNote, type Note, type ScoreSystem } from '$lib/positionBase';
+  import { getNextNote, getPreviousNote, getInstrumentPosition, Instrument, isValidNote, type Note, type ScoreSystem, getStartNoteForInstrument } from '$lib/positionBase';
   import { _ } from 'svelte-i18n';
   import StaffSystem from '$lib/components/StaffSystem.svelte';
 	import type { PageProps } from './$types';
@@ -12,7 +12,7 @@
   let system = data.system as ScoreSystem
   let localizedInstrument = $_('instruments.' + selectedInstrument);
     
-  let selectedNote: Note = $state('B');
+  let selectedNote: Note = $state(getStartNoteForInstrument(selectedInstrument));
 
   let currentNote = $derived(selectedNote);
 
