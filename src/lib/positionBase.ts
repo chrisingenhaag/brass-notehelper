@@ -28,7 +28,9 @@ export type Note =
     "fes''" | "f''" | "fis''" |
     "ges''" | "g''" | "gis''" |
     "as''" | "a''" | "ais''" |
-    "b''" | "h''" | "his''";
+    "b''" | "h''" | "his''" |
+    "ces'''" | "c'''" | "cis'''" |
+    "des'''" | "d'''" | "dis'''";
 
 export type Position = number | string
 

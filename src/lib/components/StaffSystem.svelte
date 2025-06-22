@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { NoteBasesInBassClef } from "$lib/instrumentPositions";
+	import { NoteBasesInBassClef, NoteBasesInTrebleClef } from "$lib/instrumentPositions";
 	import { getStaffPosition, type Note, ScoreSystem } from "$lib/positionBase";
 
   let {
@@ -29,7 +29,7 @@
   });
 
   let noteY = $derived(180 + (getStaffPosition(note, system) * LINE_SPACING / 2)); // Adjusted center point
-  let currentAccidental = $derived(NoteBasesInBassClef.get(note)?.accidental);
+  let currentAccidental = $derived(system === ScoreSystem.Bass ? NoteBasesInBassClef.get(note)?.accidental : NoteBasesInTrebleClef.get(note)?.accidental);
 
 
 </script>
