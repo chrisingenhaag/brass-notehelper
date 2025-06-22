@@ -59,11 +59,51 @@ export const NoteBasesInBassClef = new Map<Note, NoteInfo>([
 ]);
 
 export const NoteBasesInTrebleClef = new Map<Note, NoteInfo>([
-    ["g'", { staffPosition: 0, accidental: '♭' }],
+    ["h''", { staffPosition: -9 }],
+    ["a''", { staffPosition: -8 }],
+    ["g''", { staffPosition: -7 }],
+    ["f''", { staffPosition: -6 }],
+    ["e''", { staffPosition: -5 }],
+    ["d''", { staffPosition: -4 }],
+    ["c''", { staffPosition: -3 }],
+    ["h'", { staffPosition: -2 }],
+    ["a'", { staffPosition: -1 }],
+    ["g'", { staffPosition: 0 }],
+    ["f'", { staffPosition: 1 }],
+    ["e'", { staffPosition: 2 }],
+    ["d'", { staffPosition: 3 }],
+    ["c'", { staffPosition: 4 }],
+    ["h", { staffPosition: 5 }],
+    ["a", { staffPosition: 6 }],
+    ["g", { staffPosition: 7 }],
+    ["f", { staffPosition: 8 }],
+    ["e", { staffPosition: 9 }],
+    ["d", { staffPosition: 10 }],
+    ["c", { staffPosition: 11 }],
 ]);
 
 export const trumpetCombinations: Combination[] = [
+    { note: "h''", positions: [] },
+    { note: "a''", positions: [] },
+    { note: "g''", positions: [] },
+    { note: "f''", positions: [] },
+    { note: "e''", positions: [] },
+    { note: "d''", positions: [] },
+    { note: "c''", positions: [] },
+    { note: "h'", positions: [] },
+    { note: "a'", positions: [] },
     { note: "g'", positions: ['1/2'] },
+    { note: "f'", positions: [] },
+    { note: "e'", positions: [] },
+    { note: "d'", positions: [] },
+    { note: "c'", positions: [] },
+    { note: "h", positions: [] },
+    { note: "a", positions: [] },
+    { note: "g", positions: [] },
+    { note: "f", positions: [] },
+    { note: "e", positions: [] },
+    { note: "d", positions: [] },
+    { note: "c", positions: [] },
 ];
 
 

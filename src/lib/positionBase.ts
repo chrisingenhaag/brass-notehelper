@@ -1,4 +1,4 @@
-import { hornCombinations, NoteBasesInBassClef, tromboneCombinations, trumpetCombinations, tubaCombinations } from "./instrumentPositions";
+import { hornCombinations, NoteBasesInBassClef, NoteBasesInTrebleClef, tromboneCombinations, trumpetCombinations, tubaCombinations } from "./instrumentPositions";
 
 export type Note = 
     'Cis' | 'C' |
@@ -21,7 +21,14 @@ export type Note =
     "fes'" | "f'" | "fis'" |
     "ges'" | "g'" | "gis'" |
     "as'" | "a'" | "ais'" |
-    "b'";
+    "b'" | "h'" | "his'" |
+    "ces''" | "c''" | "cis''" |
+    "des''" | "d''" | "dis''" |
+    "es''" | "e''" | "eis''" |
+    "fes''" | "f''" | "fis''" |
+    "ges''" | "g''" | "gis''" |
+    "as''" | "a''" | "ais''" |
+    "b''" | "h''" | "his''";
 
 export type Position = number | string
 
@@ -113,7 +120,7 @@ export function getStaffPosition(note: Note, system: ScoreSystem): number {
     if (system === ScoreSystem.Bass) {
         return NoteBasesInBassClef.get(note)?.staffPosition ?? 0;
     } else if (system === ScoreSystem.Treble) {
-        return 0;
+        return NoteBasesInTrebleClef.get(note)?.staffPosition ?? 0;
     }
     throw new Error(`Unsupported score system: ${system}`);
 }
