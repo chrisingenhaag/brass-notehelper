@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/chrisingenhaag/brass-notehelper/compare/v0.2.3...v0.3.0) (2025-06-22)
+
+
+### Features
+
+* add base for trumpet in c with presentation in treble clef ([8b1be7b](https://github.com/chrisingenhaag/brass-notehelper/commit/8b1be7bcb9836cf442c336473e4f9a52c6f05a9f))
+* finalized trumpet in c ([3338e73](https://github.com/chrisingenhaag/brass-notehelper/commit/3338e734c849c2f3409f4d85ef6770798b41fd47))
+* prepare usage of score system ([eef8945](https://github.com/chrisingenhaag/brass-notehelper/commit/eef8945ef0fbfd5b2ad59b78f4013e782214a202))
+
 ## [0.2.3](https://github.com/chrisingenhaag/brass-notehelper/compare/v0.2.2...v0.2.3) (2025-06-09)
 
 
