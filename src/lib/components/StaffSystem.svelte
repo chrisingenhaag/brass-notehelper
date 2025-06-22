@@ -34,7 +34,7 @@
 
 </script>
 
-<svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+<svg viewBox="0 0 400 350" preserveAspectRatio="xMidYMid meet">
   {#if system === ScoreSystem.Bass}  
     <!-- Bass Clef Symbol (authentic, filled, with dots) -->
     <path d="M 51,179
