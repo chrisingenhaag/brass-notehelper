@@ -1,3 +1,10 @@
+## [0.3.1](https://github.com/chrisingenhaag/brass-notehelper/compare/v0.3.0...v0.3.1) (2025-09-21)
+
+
+### Bug Fixes
+
+* remove broken healthcheck ([b23aca0](https://github.com/chrisingenhaag/brass-notehelper/commit/b23aca0437bc2b3cee03ddf2041ca4e840382d93))
+
 # [0.3.0](https://github.com/chrisingenhaag/brass-notehelper/compare/v0.2.3...v0.3.0) (2025-06-22)
 
 
