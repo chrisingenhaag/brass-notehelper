@@ -9,7 +9,7 @@ describe('StaffSystem', () => {
     getCombinationsForInstrument(instrument).forEach((combination) => {
       test(`should render ${combination.note} in for ${instrument} in ${instrumentStaffSystemMap[instrument]}`, () => {
         const { container } = render(StaffSystem, {
-          system: ScoreSystem.Bass,
+          system: instrumentStaffSystemMap[instrument],
           note: combination.note,
         });
 
