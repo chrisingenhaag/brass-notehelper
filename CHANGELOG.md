@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/chrisingenhaag/brass-notehelper/compare/v0.3.1...v0.4.0) (2026-04-19)
+
+
+### Features
+
+* add treble clef symbol and improve bass clef rendering ([916da20](https://github.com/chrisingenhaag/brass-notehelper/commit/916da2090fa1ef5296115725c0dd377713cfc44a))
+
 ## [0.3.1](https://github.com/chrisingenhaag/brass-notehelper/compare/v0.3.0...v0.3.1) (2025-09-21)
 
 
