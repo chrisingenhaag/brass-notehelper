@@ -31,6 +31,8 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - run: npm test
+        env:
+          DEBUG: pw:webserver
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
