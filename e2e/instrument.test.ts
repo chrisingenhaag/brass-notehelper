@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { gotoHydrated } from './helpers';
 
 test('home page links to instrument pages without clef in url', async ({ page }) => {
 	await page.goto('/');
@@ -18,7 +19,7 @@ test('unknown instrument returns 404', async ({ page }) => {
 });
 
 test('staff is an accessible slider that follows arrow keys', async ({ page }) => {
-	await page.goto('/instrument/trombone');
+	await gotoHydrated(page, '/instrument/trombone');
 	const slider = page.getByRole('slider');
 	const start = Number(await slider.getAttribute('aria-valuenow'));
 	await page.keyboard.press('ArrowUp');
@@ -26,7 +27,7 @@ test('staff is an accessible slider that follows arrow keys', async ({ page }) =
 });
 
 test('arrow buttons change the note and disable at the range ends', async ({ page }) => {
-	await page.goto('/instrument/trombone');
+	await gotoHydrated(page, '/instrument/trombone');
 	const slider = page.getByRole('slider');
 	const up = page.getByRole('button', { name: 'Higher note' });
 	const down = page.getByRole('button', { name: 'Lower note' });

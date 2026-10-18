@@ -2,6 +2,7 @@
 	import '../app.css';
 	import '../lib/i18n';
 
+	import { onMount } from 'svelte';
 	import { _, locale } from 'svelte-i18n';
 	import { resolve } from '$app/paths';
 
@@ -12,6 +13,12 @@
 	// Messages are already loaded by +layout.ts, so set() takes effect immediately.
 	// svelte-ignore state_referenced_locally
 	locale.set(data.lang);
+
+	// Marks the end of hydration: child onMount callbacks (e.g. the page's keydown listener) run
+	// before this one. Server-rendered markup is visible earlier, so e2e tests wait for this.
+	onMount(() => {
+		document.body.dataset.hydrated = 'true';
+	});
 </script>
 
 <svelte:head>
