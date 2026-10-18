@@ -16,3 +16,11 @@ test('unknown instrument returns 404', async ({ page }) => {
 	const response = await page.goto('/instrument/kazoo');
 	expect(response?.status()).toBe(404);
 });
+
+test('staff is an accessible slider that follows arrow keys', async ({ page }) => {
+	await page.goto('/instrument/trombone');
+	const slider = page.getByRole('slider');
+	const start = Number(await slider.getAttribute('aria-valuenow'));
+	await page.keyboard.press('ArrowUp');
+	await expect(slider).toHaveAttribute('aria-valuenow', String(start + 1));
+});
