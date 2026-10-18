@@ -1,0 +1,21 @@
+src/lib/i18n/index.ts
+  s_e4e97453404912::t_73d2786d988610 2
+src/routes/+layout.ts
+  s_e4e97453404912::t_a1095481cae7f5 2,10
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5e67963adacafabdb0774fff145ce0a9d4f38b3d",
+  "prompts": {},
+  "sessions": {
+    "s_e4e97453404912": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a01b90cd-11aa-477f-96dc-1a079b521bfd",
+        "model": "unknown"
+      },
+      "human_author": "Christian Ingenhaag <christian.ingenhaag@googlemail.com>"
+    }
+  }
+}
