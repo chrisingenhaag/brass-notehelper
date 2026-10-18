@@ -1,6 +1,7 @@
+import type { Handle } from '@sveltejs/kit/hooks';
+
 // hooks.server.ts
 import { defaultLocale, supportedLocales } from '$lib/i18n';
-import type { Handle } from '@sveltejs/kit';
 
 export const handle: Handle = async ({ event, resolve }) => {
 	const requested = event.request.headers.get('accept-language')?.split(',')[0]?.split('-')[0];
