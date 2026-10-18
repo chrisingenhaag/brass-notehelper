@@ -1,11 +1,12 @@
 import { expect, test, type Locator } from '@playwright/test';
+import { gotoHydrated } from './helpers';
 
 async function valueOf(slider: Locator) {
 	return Number(await slider.getAttribute('aria-valuenow'));
 }
 
 test('mouse wheel steps the note up and down', async ({ page }) => {
-	await page.goto('/instrument/trombone');
+	await gotoHydrated(page, '/instrument/trombone');
 	const slider = page.getByRole('slider');
 	const start = await valueOf(slider);
 
@@ -32,7 +33,7 @@ test.describe('touch', () => {
 	}
 
 	test('swipe steps the note up and down', async ({ page }) => {
-		await page.goto('/instrument/trombone');
+		await gotoHydrated(page, '/instrument/trombone');
 		const slider = page.getByRole('slider');
 		const start = await valueOf(slider);
 
@@ -43,7 +44,7 @@ test.describe('touch', () => {
 	});
 
 	test('small movements below the threshold do nothing', async ({ page }) => {
-		await page.goto('/instrument/trombone');
+		await gotoHydrated(page, '/instrument/trombone');
 		const slider = page.getByRole('slider');
 		const start = await valueOf(slider);
 
