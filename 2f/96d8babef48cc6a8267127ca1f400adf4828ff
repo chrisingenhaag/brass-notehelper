@@ -1,0 +1,31 @@
+src/app.d.ts
+  s_e4e97453404912::t_7e71f2c09313ac 6-8
+src/routes/+layout.server.ts
+  s_e4e97453404912::t_7e71f2c09313ac 1-3
+src/routes/+layout.ts
+  s_e4e97453404912::t_7e71f2c09313ac 4,8-12
+src/hooks.server.ts
+  s_e4e97453404912::t_7e71f2c09313ac 8-9
+src/routes/+layout.svelte
+  s_e4e97453404912::t_7e71f2c09313ac 5,8-14
+e2e/lang.test.ts
+  s_e4e97453404912::t_88971a0d04f6a0 46-61
+src/routes/instrument/[instrument=instrument]/page.svelte.test.ts
+  s_e4e97453404912::t_9fd2f505430037 15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2f96d8babef48cc6a8267127ca1f400adf4828ff",
+  "prompts": {},
+  "sessions": {
+    "s_e4e97453404912": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a01b90cd-11aa-477f-96dc-1a079b521bfd",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Christian Ingenhaag <christian.ingenhaag@googlemail.com>"
+    }
+  }
+}
