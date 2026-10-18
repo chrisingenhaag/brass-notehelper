@@ -1,0 +1,21 @@
+src/lib/instrumentPositions.ts
+  s_e4e97453404912::t_c28ad5a19c40e7 133,135-193
+src/lib/positionBase.test.ts
+  s_e4e97453404912::t_a604eca6457602 1-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a7e33d09ece3a02d035fc53fab82a1a92faeee50",
+  "prompts": {},
+  "sessions": {
+    "s_e4e97453404912": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a01b90cd-11aa-477f-96dc-1a079b521bfd",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Christian Ingenhaag <christian.ingenhaag@googlemail.com>"
+    }
+  }
+}
