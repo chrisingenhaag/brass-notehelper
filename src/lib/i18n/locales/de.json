@@ -1,7 +1,9 @@
 {
 	"navTitle": "Notenhelferlein",
 	"title": "Notenhelferlein - Interaktiver Notenhelfer für Blasinstrumente",
-	"description": "Wische oder scrolle über die Note, um sie zu verändern.",
+	"description": "Wische oder scrolle über die Note oder nutze die Pfeile, um sie zu verändern.",
+	"noteUp": "Höherer Ton",
+	"noteDown": "Tieferer Ton",
 	"instrumentPrefix": "Gewähltes Instrument:",
 	"welcome": {
 		"title": "Willkommen beim Notenhelferlein",

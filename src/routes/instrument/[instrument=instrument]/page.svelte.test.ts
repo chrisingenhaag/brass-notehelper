@@ -14,7 +14,9 @@ describe('/instrument/[instrument]/+page.svelte', () => {
 	test('shows the selected instrument and its start note with position', () => {
 		render(Page, { data: {}, params: { instrument: Instrument.Trombone } });
 		expect(
-			screen.getByText('Wische oder scrolle über die Note, um sie zu verändern.')
+			screen.getByText(
+				'Wische oder scrolle über die Note oder nutze die Pfeile, um sie zu verändern.'
+			)
 		).toBeInTheDocument();
 		expect(screen.getByText('Posaune')).toBeInTheDocument();
 		expect(screen.getByRole('slider')).toHaveAttribute('aria-valuetext', 'B 1');

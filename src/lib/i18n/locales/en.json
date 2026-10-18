@@ -1,7 +1,9 @@
 {
 	"navTitle": "brass helper",
 	"title": "Note Helper - Interactive Note Guide for brass instruments",
-	"description": "Swipe or scroll over the note to change it.",
+	"description": "Swipe or scroll over the note, or use the arrows, to change it.",
+	"noteUp": "Higher note",
+	"noteDown": "Lower note",
 	"instrumentPrefix": "Selected instrument:",
 	"welcome": {
 		"title": "Welcome to Note Helper",
