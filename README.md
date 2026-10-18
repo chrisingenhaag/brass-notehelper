@@ -41,7 +41,7 @@ npm run lint         # prettier + eslint
 npm run format       # auto-format with prettier
 npm run check        # svelte-check type-checking
 npm run test:unit    # vitest
-npm run test:e2e     # playwright (expects the built app on port 4173)
+npm run test:e2e     # playwright (expects the built app; serves it on port 4380)
 npm run test         # unit + e2e
 ```
 
