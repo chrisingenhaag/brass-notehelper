@@ -9,12 +9,8 @@ describe('/+page.svelte', () => {
 	locale.set('de');
 
 	test('should render h1', () => {
-		render(Page, {
-			data: {
-				instrument: Instrument.Trombone,
-				system: ScoreSystem.Bass
-			}
-		});
+		const params = { instrument: Instrument.Trombone, system: ScoreSystem.Bass };
+		render(Page, { data: params, params });
 		expect(screen.getByText('description')).toBeInTheDocument();
 		expect(screen.getByText('instrumentPrefix')).toBeInTheDocument();
 		expect(screen.getByText('instruments.trombone')).toBeInTheDocument();

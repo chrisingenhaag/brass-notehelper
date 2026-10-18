@@ -3,6 +3,7 @@
 	import '../lib/i18n';
 
 	import { _ } from 'svelte-i18n';
+	import { resolve } from '$app/paths';
 
 	let { children } = $props();
 </script>
@@ -62,8 +63,8 @@
 					tabindex="0"
 					class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
 				>
-					<li><a class="text-base" href="/">{$_('menu.items.home')}</a></li>
-					<li><a class="text-base" href="/about">{$_('menu.items.about')}</a></li>
+					<li><a class="text-base" href={resolve('/')}>{$_('menu.items.home')}</a></li>
+					<li><a class="text-base" href={resolve('/about')}>{$_('menu.items.about')}</a></li>
 				</ul>
 			</div>
 		</div>
