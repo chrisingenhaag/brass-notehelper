@@ -10,7 +10,7 @@ export const NoteBasesInBassClef = new Map<Note, NoteInfo>([
 	['Ges', { staffPosition: 2, accidental: '♭' }],
 	['G', { staffPosition: 2 }],
 	['Gis', { staffPosition: 2, accidental: '♯' }],
-	['As ', { staffPosition: 1, accidental: '♭' }],
+	['As', { staffPosition: 1, accidental: '♭' }],
 	['A', { staffPosition: 1 }],
 	['Ais', { staffPosition: 1, accidental: '♯' }],
 	['B', { staffPosition: 0, accidental: '♭' }],
@@ -206,7 +206,7 @@ export const tromboneCombinations: Combination[] = [
 	{ note: 'G', positions: [4] },
 	{ note: 'Gis', positions: [3] },
 
-	{ note: 'As ', positions: [3] },
+	{ note: 'As', positions: [3] },
 	{ note: 'A', positions: [2] },
 	{ note: 'Ais', positions: [1] },
 
@@ -281,7 +281,7 @@ export const hornCombinations: Combination[] = [
 	{ note: 'G', positions: ['1/2', 3] },
 	{ note: 'Gis', positions: [1] },
 
-	{ note: 'As ', positions: [1] },
+	{ note: 'As', positions: [1] },
 	{ note: 'A', positions: [2] },
 	{ note: 'Ais', positions: [0] },
 
@@ -357,7 +357,7 @@ export const tubaCombinations: Combination[] = [
 	{ note: 'G', positions: ['1/2'] },
 	{ note: 'Gis', positions: [1] },
 
-	{ note: 'As ', positions: [1] },
+	{ note: 'As', positions: [1] },
 	{ note: 'A', positions: [2] },
 	{ note: 'Ais', positions: [0] },
 

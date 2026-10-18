@@ -22,7 +22,7 @@ export type Note =
 	| 'Ges'
 	| 'G'
 	| 'Gis'
-	| 'As '
+	| 'As'
 	| 'A'
 	| 'Ais'
 	| 'B'
