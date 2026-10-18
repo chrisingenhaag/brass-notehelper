@@ -1,0 +1,23 @@
+src/params.ts
+  s_e4e97453404912::t_7f97cd8dfaa957 2
+src/lib/instrument.ts
+  s_e4e97453404912::t_7f97cd8dfaa957 1-10
+src/lib/positionBase.ts
+  s_e4e97453404912::t_7f97cd8dfaa957 9-11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "244bcee42da9fa4912efe58933202b1ffe2739e9",
+  "prompts": {},
+  "sessions": {
+    "s_e4e97453404912": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a01b90cd-11aa-477f-96dc-1a079b521bfd",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Christian Ingenhaag <christian.ingenhaag@googlemail.com>"
+    }
+  }
+}
