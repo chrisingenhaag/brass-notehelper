@@ -26,11 +26,6 @@
 	"textElements": {
 		"or": "oder"
 	},
-	"settings": {
-		"title": "Einstellungen",
-		"instrument": "gewähltes Instrument",
-		"back": "Zurück"
-	},
 	"about": {
 		"title": "Über Notenhelferlein",
 		"intro": "Notenhelferlein ist eine interaktive Lernhilfe für Blechbläser:innen – für Posaune, Horn, Tuba und Trompete.",

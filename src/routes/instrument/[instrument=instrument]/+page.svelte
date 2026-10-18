@@ -23,13 +23,11 @@
 	// writable derived: resets to the start note when the instrument changes
 	let selectedNote: Note = $derived(getStartNoteForInstrument(selectedInstrument));
 
-	let currentNote = $derived(selectedNote);
-
 	function handleKeydown(event: { key: string }) {
 		if (event.key === 'ArrowUp') {
-			selectedNote = getNextNote(selectedInstrument, currentNote);
+			selectedNote = getNextNote(selectedInstrument, selectedNote);
 		} else if (event.key === 'ArrowDown') {
-			selectedNote = getPreviousNote(selectedInstrument, currentNote);
+			selectedNote = getPreviousNote(selectedInstrument, selectedNote);
 		}
 	}
 
@@ -49,10 +47,10 @@
 		if (Math.abs(deltaY) > TOUCH_SENSITIVITY) {
 			if (deltaY < 0) {
 				// Swipe up
-				selectedNote = getNextNote(selectedInstrument, currentNote);
+				selectedNote = getNextNote(selectedInstrument, selectedNote);
 			} else {
 				// Swipe down
-				selectedNote = getPreviousNote(selectedInstrument, currentNote);
+				selectedNote = getPreviousNote(selectedInstrument, selectedNote);
 			}
 			touchStartY = touchCurrentY;
 		}
@@ -69,10 +67,10 @@
 		if (Math.abs(scrolledAmount) > SCROLL_SENSITIVITY) {
 			if (event.deltaY < 0) {
 				// Scroll up
-				selectedNote = getNextNote(selectedInstrument, currentNote);
+				selectedNote = getNextNote(selectedInstrument, selectedNote);
 			} else {
 				// Scroll down
-				selectedNote = getPreviousNote(selectedInstrument, currentNote);
+				selectedNote = getPreviousNote(selectedInstrument, selectedNote);
 			}
 			scrolledAmount = 0; // Reset after processing
 		}
@@ -86,12 +84,12 @@
 	});
 
 	let instrumentPositions = $derived(
-		isValidNote(selectedInstrument, currentNote)
-			? getInstrumentPosition(selectedInstrument, currentNote)
+		isValidNote(selectedInstrument, selectedNote)
+			? getInstrumentPosition(selectedInstrument, selectedNote)
 			: []
 	);
 	let combinations = $derived(getCombinationsForInstrument(selectedInstrument));
-	let noteIndex = $derived(combinations.findIndex((c) => c.note === currentNote));
+	let noteIndex = $derived(combinations.findIndex((c) => c.note === selectedNote));
 </script>
 
 <div class="mt-2 text-center">
@@ -100,7 +98,7 @@
 </div>
 
 <div class="note-value">
-	{currentNote}
+	{selectedNote}
 	{#if instrumentPositions.length > 0}
 		<span class="position">({instrumentPositions.join(' ' + $_('textElements.or') + ' ')})</span>
 	{/if}
@@ -114,12 +112,12 @@
 	aria-valuemin={0}
 	aria-valuemax={combinations.length - 1}
 	aria-valuenow={noteIndex}
-	aria-valuetext={[currentNote, ...instrumentPositions].join(' ')}
+	aria-valuetext={[selectedNote, ...instrumentPositions].join(' ')}
 	ontouchstart={handleTouchStart}
 	ontouchmove={handleTouchMove}
 	onwheel={handleWheel}
 >
-	<StaffSystem note={currentNote} {system} />
+	<StaffSystem note={selectedNote} {system} />
 </div>
 
 <style>

@@ -20,7 +20,6 @@
 				ledgerLines.push(180 + (pos * LINE_SPACING) / 2);
 			}
 		} else if (getStaffPosition(note, system) >= 4) {
-			// Start from 6 instead of 4 to get the first line correct
 			for (let pos = 4; pos <= getStaffPosition(note, system); pos += 2) {
 				ledgerLines.push(180 + (pos * LINE_SPACING) / 2);
 			}

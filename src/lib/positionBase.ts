@@ -202,10 +202,3 @@ export function getStaffPosition(note: Note, system: ScoreSystem): number {
 export function isValidNote(instrument: Instrument, note: string): note is Note {
 	return getCombinationsForInstrument(instrument).some((combination) => combination.note === note);
 }
-
-export function getNoteFromString(instrument: Instrument, note: string): Combination | null {
-	const foundCombination = getCombinationsForInstrument(instrument).find(
-		(combination) => combination.note === note
-	);
-	return foundCombination ? foundCombination : null;
-}
