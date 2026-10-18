@@ -1,4 +1,4 @@
-import { type Note, type Combination, type NoteInfo } from './positionBase';
+import type { Note, Combination, NoteInfo } from './positionBase';
 
 export const NoteBasesInBassClef = new Map<Note, NoteInfo>([
 	['Es', { staffPosition: 4, accidental: '♭' }],

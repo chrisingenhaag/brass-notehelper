@@ -122,66 +122,51 @@ export enum Instrument {
 	Horn = 'horn',
 	Tuba = 'tuba',
 	Trumpetc = 'trumpetc'
-	// Add other instruments here as needed
 }
 
-// a map linking instruments to their staff system
-export const instrumentStaffSystemMap: Record<Instrument, ScoreSystem> = {
-	[Instrument.Trombone]: ScoreSystem.Bass,
-	[Instrument.Horn]: ScoreSystem.Bass,
-	[Instrument.Tuba]: ScoreSystem.Bass,
-	[Instrument.Trumpetc]: ScoreSystem.Treble
-	// Add other instruments here as needed
+export interface InstrumentConfig {
+	system: ScoreSystem;
+	startNote: Note;
+	combinations: Combination[];
+}
+
+export const instrumentConfig: Record<Instrument, InstrumentConfig> = {
+	[Instrument.Trombone]: {
+		system: ScoreSystem.Bass,
+		startNote: 'B',
+		combinations: tromboneCombinations
+	},
+	[Instrument.Horn]: { system: ScoreSystem.Bass, startNote: 'B', combinations: hornCombinations },
+	[Instrument.Tuba]: { system: ScoreSystem.Bass, startNote: 'B', combinations: tubaCombinations },
+	[Instrument.Trumpetc]: {
+		system: ScoreSystem.Treble,
+		startNote: "g'",
+		combinations: trumpetCombinations
+	}
 };
 
-export function getStartNoteForInstrument(instrument: Instrument): Note {
-	if (instrument === Instrument.Trombone) {
-		return 'B';
-	} else if (instrument === Instrument.Horn) {
-		return 'B';
-	} else if (instrument === Instrument.Tuba) {
-		return 'B';
-	} else if (instrument === Instrument.Trumpetc) {
-		return "g'";
-	}
-	throw new Error(`Unsupported instrument: ${instrument}`);
-}
-
-export function getCombinationsForInstrument(instrument: Instrument): Combination[] {
-	if (instrument === Instrument.Trombone) {
-		return tromboneCombinations;
-	} else if (instrument === Instrument.Horn) {
-		return hornCombinations;
-	} else if (instrument === Instrument.Tuba) {
-		return tubaCombinations;
-	} else if (instrument === Instrument.Trumpetc) {
-		return trumpetCombinations;
-	}
-	throw new Error(`Unsupported instrument: ${instrument}`);
-}
-
 export function getNextNote(instrument: Instrument, note: Note): Note {
-	const index = getCombinationsForInstrument(instrument).findIndex(
+	const index = instrumentConfig[instrument].combinations.findIndex(
 		(combination) => combination.note === note
 	);
-	if (index === -1 || index === getCombinationsForInstrument(instrument).length - 1) {
+	if (index === -1 || index === instrumentConfig[instrument].combinations.length - 1) {
 		return note;
 	}
-	return getCombinationsForInstrument(instrument)[index + 1].note;
+	return instrumentConfig[instrument].combinations[index + 1].note;
 }
 
 export function getPreviousNote(instrument: Instrument, note: Note): Note {
-	const index = getCombinationsForInstrument(instrument).findIndex(
+	const index = instrumentConfig[instrument].combinations.findIndex(
 		(combination) => combination.note === note
 	);
 	if (index === -1 || index === 0) {
 		return note;
 	}
-	return getCombinationsForInstrument(instrument)[index - 1].note;
+	return instrumentConfig[instrument].combinations[index - 1].note;
 }
 
 export function getInstrumentPosition(instrument: Instrument, note: Note): Position[] {
-	const positions = getCombinationsForInstrument(instrument).find(
+	const positions = instrumentConfig[instrument].combinations.find(
 		(combination) => combination.note === note
 	)?.positions;
 	if (!positions) {
@@ -200,5 +185,5 @@ export function getStaffPosition(note: Note, system: ScoreSystem): number {
 }
 
 export function isValidNote(instrument: Instrument, note: string): note is Note {
-	return getCombinationsForInstrument(instrument).some((combination) => combination.note === note);
+	return instrumentConfig[instrument].combinations.some((combination) => combination.note === note);
 }

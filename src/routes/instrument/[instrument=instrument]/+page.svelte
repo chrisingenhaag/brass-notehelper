@@ -4,11 +4,9 @@
 		getNextNote,
 		getPreviousNote,
 		getInstrumentPosition,
-		getCombinationsForInstrument,
-		instrumentStaffSystemMap,
+		instrumentConfig,
 		isValidNote,
-		type Note,
-		getStartNoteForInstrument
+		type Note
 	} from '$lib/positionBase';
 	import { _ } from 'svelte-i18n';
 	import StaffSystem from '$lib/components/StaffSystem.svelte';
@@ -18,10 +16,10 @@
 
 	// derived, because SvelteKit reuses this component when navigating between instruments
 	let selectedInstrument = $derived(params.instrument);
-	let system = $derived(instrumentStaffSystemMap[selectedInstrument]);
+	let system = $derived(instrumentConfig[selectedInstrument].system);
 
 	// writable derived: resets to the start note when the instrument changes
-	let selectedNote: Note = $derived(getStartNoteForInstrument(selectedInstrument));
+	let selectedNote: Note = $derived(instrumentConfig[selectedInstrument].startNote);
 
 	function handleKeydown(event: { key: string }) {
 		if (event.key === 'ArrowUp') {
@@ -88,7 +86,7 @@
 			? getInstrumentPosition(selectedInstrument, selectedNote)
 			: []
 	);
-	let combinations = $derived(getCombinationsForInstrument(selectedInstrument));
+	let combinations = $derived(instrumentConfig[selectedInstrument].combinations);
 	let noteIndex = $derived(combinations.findIndex((c) => c.note === selectedNote));
 </script>
 
