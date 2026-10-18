@@ -15,24 +15,16 @@
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="Notenhelferlein - Interaktive Zugtabelle für Posaune" />
-	<meta
-		property="og:description"
-		content="Lernen Sie die Positionen der Noten im Bassschlüssel und die entsprechenden Zugpositionen auf der Posaune."
-	/>
+	<meta property="og:title" content={$_('title')} />
+	<meta property="og:description" content={$_('meta.description')} />
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:title" content="Notenhelferlein - Interaktive Zugtabelle für Posaune" />
-	<meta
-		name="twitter:description"
-		content="Lernen Sie die Positionen der Noten im Bassschlüssel und die entsprechenden Zugpositionen auf der Posaune."
-	/>
+	<meta name="twitter:title" content={$_('title')} />
+	<meta name="twitter:description" content={$_('meta.description')} />
 
 	<!-- Additional Meta -->
 	<meta name="author" content="Christian Ingenhaag" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="language" content="de" />
 </svelte:head>
 
 <div class="container mx-auto max-w-prose shadow-md lg:w-1/2">

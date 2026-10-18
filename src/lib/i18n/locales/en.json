@@ -4,17 +4,17 @@
 	"description": "Swipe or scroll over the note to change it.",
 	"instrumentPrefix": "Selected instrument:",
 	"welcome": {
-		"title": "Willkommen beim Notenhelferlein",
-		"description": "Wähle ein Instrument aus, um passende Noten und Positionen zu entdecken."
+		"title": "Welcome to Note Helper",
+		"description": "Choose an instrument to explore notes and their positions."
 	},
 	"meta": {
-		"description": "Interactive note helper for trombone. Learn the positions of notes in bass clef and their corresponding trombone slide positions.",
-		"keywords": "trombone, note helper, bass clef, music education, slide positions"
+		"description": "Interactive note helper for brass players. Learn notes in bass and treble clef and the matching slide and valve positions for trombone, horn, tuba and trumpet.",
+		"keywords": "trombone, horn, tuba, trumpet, note helper, bass clef, treble clef, slide positions, fingerings, music education"
 	},
 	"menu": {
 		"items": {
 			"home": "Instruments",
-			"about": "about"
+			"about": "About"
 		}
 	},
 	"instruments": {
@@ -32,18 +32,18 @@
 		"back": "Back"
 	},
 	"about": {
-		"title": "Über Notenhelferlein",
-		"intro": "Notenhelferlein ist eine interaktive Lernhilfe für Blechbläser:innen, insbesondere für Posaune, Trompete und Horn.",
-		"featuresTitle": "Funktionen",
-		"feature1": "Zeigt Noten im Bassschlüssel auf einer Notenlinie an",
-		"feature2": "Visualisiert die passenden Zug- oder Ventilpositionen für das gewählte Instrument",
-		"feature3": "Blättern oder wischen Sie durch die Noten – ideal für Touch und Desktop",
-		"feature4": "Automatische Anpassung an verschiedene Instrumente",
-		"feature5": "Mehrsprachige Oberfläche (Deutsch/Englisch)",
-		"feature6": "Einfache Einstellungen für Instrument und Sprache",
-		"usageTitle": "Wie funktioniert es?",
-		"usage1": "Wählen Sie Ihr Instrument in den Einstellungen aus.",
-		"usage2": "Scrollen oder wischen Sie, um verschiedene Noten zu sehen.",
-		"usage3": "Die passenden Positionen werden direkt angezeigt."
+		"title": "About Note Helper",
+		"intro": "Note Helper is an interactive learning aid for brass players – for trombone, horn, tuba and trumpet.",
+		"featuresTitle": "Features",
+		"feature1": "Shows notes in bass or treble clef on a staff",
+		"feature2": "Displays the matching slide or valve positions for the selected instrument",
+		"feature3": "Scroll, swipe or use the arrow keys to move through the notes – works on touch and desktop",
+		"feature4": "Adapts automatically to the selected instrument",
+		"feature5": "Multilingual interface (German/English)",
+		"feature6": "The language follows your browser setting automatically",
+		"usageTitle": "How does it work?",
+		"usage1": "Choose your instrument on the home page.",
+		"usage2": "Scroll, swipe or use the arrow keys to see different notes.",
+		"usage3": "The matching positions are shown right away."
 	}
 }
