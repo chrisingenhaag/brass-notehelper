@@ -1,3 +1,11 @@
+## [0.5.1](https://github.com/chrisingenhaag/brass-notehelper/compare/v0.5.0...v0.5.1) (2026-10-18)
+
+
+### Bug Fixes
+
+* draw accidentals as paths so they no longer touch the note ([5109710](https://github.com/chrisingenhaag/brass-notehelper/commit/5109710ee99b21c940a5eea502a312b18c4e3800))
+* render each request in its own language on the server ([024ec1c](https://github.com/chrisingenhaag/brass-notehelper/commit/024ec1cc2583d2d3b6d7f7eeb227867e48450b8a))
+
 # [0.5.0](https://github.com/chrisingenhaag/brass-notehelper/compare/v0.4.1...v0.5.0) (2026-10-18)
 
 
