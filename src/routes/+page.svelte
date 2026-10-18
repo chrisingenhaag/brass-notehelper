@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Instrument, instrumentStaffSystemMap } from '$lib/positionBase';
+	import { Instrument } from '$lib/positionBase';
 	import { _ } from 'svelte-i18n';
 	import { resolve } from '$app/paths';
 
@@ -15,9 +15,8 @@
 	<nav class="instrument-links mt-4 flex flex-col justify-center gap-6">
 		{#each instruments as instrument (instrument)}
 			<a
-				href={resolve('/instrument/[instrument]/[system]', {
-					instrument,
-					system: instrumentStaffSystemMap[instrument]
+				href={resolve('/instrument/[instrument=instrument]', {
+					instrument
 				})}>{$_('instruments.' + instrument)}</a
 			>
 		{/each}

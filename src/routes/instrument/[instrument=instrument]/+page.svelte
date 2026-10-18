@@ -4,23 +4,23 @@
 		getNextNote,
 		getPreviousNote,
 		getInstrumentPosition,
-		Instrument,
+		instrumentStaffSystemMap,
 		isValidNote,
 		type Note,
-		type ScoreSystem,
 		getStartNoteForInstrument
 	} from '$lib/positionBase';
 	import { _ } from 'svelte-i18n';
 	import StaffSystem from '$lib/components/StaffSystem.svelte';
 	import type { PageProps } from './$types';
 
-	let { data }: PageProps = $props();
+	let { params }: PageProps = $props();
 
-	let selectedInstrument = data.instrument as Instrument; // Default instrument
-	let system = data.system as ScoreSystem;
-	let localizedInstrument = $_('instruments.' + selectedInstrument);
+	// derived, because SvelteKit reuses this component when navigating between instruments
+	let selectedInstrument = $derived(params.instrument);
+	let system = $derived(instrumentStaffSystemMap[selectedInstrument]);
 
-	let selectedNote: Note = $state(getStartNoteForInstrument(selectedInstrument));
+	// writable derived: resets to the start note when the instrument changes
+	let selectedNote: Note = $derived(getStartNoteForInstrument(selectedInstrument));
 
 	let currentNote = $derived(selectedNote);
 
@@ -93,7 +93,7 @@
 
 <div class="mt-2 text-center">
 	<p>{$_('description')}</p>
-	<p>{$_('instrumentPrefix')} <b>{localizedInstrument}</b></p>
+	<p>{$_('instrumentPrefix')} <b>{$_('instruments.' + selectedInstrument)}</b></p>
 </div>
 
 <div class="note-value">
