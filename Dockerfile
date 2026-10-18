@@ -1,11 +1,11 @@
-FROM node:18-alpine
+FROM node:24-alpine
 
 WORKDIR /app
 
 COPY build/ /app/
 COPY package*.json /app/
 
-RUN npm ci --production --ignore-scripts
+RUN npm ci --omit=dev --ignore-scripts
 
 EXPOSE 3000
 
