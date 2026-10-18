@@ -1,0 +1,19 @@
+src/routes/instrument/[instrument=instrument]/+page.svelte
+  s_e4e97453404912::t_dcc5b31820d533 28,30,50,53,70,73,87-88,92,101,115,120
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9a229a3d1ecac6270682b52b4bfa81dd21dd1d17",
+  "prompts": {},
+  "sessions": {
+    "s_e4e97453404912": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a01b90cd-11aa-477f-96dc-1a079b521bfd",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Christian Ingenhaag <christian.ingenhaag@googlemail.com>"
+    }
+  }
+}
