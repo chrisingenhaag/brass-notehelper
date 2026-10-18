@@ -57,7 +57,7 @@ npx vitest run src/lib/components/StaffSystem.svelte.test.ts
 - [src/lib/instrumentPositions.ts](src/lib/instrumentPositions.ts) — note-to-position data for each instrument
 - [src/lib/components/StaffSystem.svelte](src/lib/components/StaffSystem.svelte) — SVG renderer for the staff, clef, notes, and accidentals
 - [src/lib/i18n/](src/lib/i18n/) — locale setup and translations (`de.json`, `en.json`)
-- [src/routes/](src/routes/) — file-based routing: home, `/instrument/[instrument]/[system]`, `/about`
+- [src/routes/](src/routes/) — file-based routing: home, `/instrument/[instrument]`, `/about`
 
 See [CLAUDE.md](CLAUDE.md) for deeper architectural notes and the steps to add a new instrument.
 
