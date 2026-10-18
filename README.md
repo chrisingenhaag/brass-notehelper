@@ -17,7 +17,7 @@ Available in German (default) and English.
 
 ## Tech stack
 
-- [SvelteKit 2](https://svelte.dev/docs/kit) + [Svelte 5](https://svelte.dev/)
+- [SvelteKit 3](https://svelte.dev/docs/kit) + [Svelte 5](https://svelte.dev/)
 - TypeScript
 - [Tailwind CSS 4](https://tailwindcss.com/) + [DaisyUI](https://daisyui.com/)
 - [svelte-i18n](https://github.com/kaisermann/svelte-i18n)
