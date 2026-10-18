@@ -6,9 +6,10 @@
 		getInstrumentPosition,
 		instrumentConfig,
 		isValidNote,
+		toEnglishNoteName,
 		type Note
 	} from '$lib/positionBase';
-	import { _ } from 'svelte-i18n';
+	import { _, locale } from 'svelte-i18n';
 	import StaffSystem from '$lib/components/StaffSystem.svelte';
 	import type { PageProps } from './$types';
 
@@ -96,6 +97,9 @@
 	);
 	let combinations = $derived(instrumentConfig[selectedInstrument].combinations);
 	let noteIndex = $derived(combinations.findIndex((c) => c.note === selectedNote));
+	let noteName = $derived(
+		$locale?.startsWith('en') ? toEnglishNoteName(selectedNote) : selectedNote
+	);
 </script>
 
 <div class="mt-2 text-center">
@@ -104,7 +108,7 @@
 </div>
 
 <div class="note-value">
-	{selectedNote}
+	{noteName}
 	{#if instrumentPositions.length > 0}
 		<span class="position">({instrumentPositions.join(' ' + $_('textElements.or') + ' ')})</span>
 	{/if}
@@ -118,7 +122,7 @@
 	aria-valuemin={0}
 	aria-valuemax={combinations.length - 1}
 	aria-valuenow={noteIndex}
-	aria-valuetext={[selectedNote, ...instrumentPositions].join(' ')}
+	aria-valuetext={[noteName, ...instrumentPositions].join(' ')}
 	ontouchstart={handleTouchStart}
 	ontouchmove={handleTouchMove}
 	onwheel={handleWheel}

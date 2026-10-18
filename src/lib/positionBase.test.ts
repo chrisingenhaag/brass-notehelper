@@ -9,6 +9,7 @@ import {
 	instrumentConfig,
 	isValidNote,
 	ScoreSystem,
+	toEnglishNoteName,
 	type Note
 } from './positionBase';
 
@@ -45,4 +46,21 @@ test('unknown note: navigation keeps it, position lookup throws', () => {
 	expect(getNextNote(Instrument.Trombone, outOfRange)).toBe(outOfRange);
 	expect(getPreviousNote(Instrument.Trombone, outOfRange)).toBe(outOfRange);
 	expect(() => getInstrumentPosition(Instrument.Trombone, outOfRange)).toThrow();
+});
+
+test.each([
+	['B', 'B♭2'],
+	['H', 'B2'],
+	['His', 'B♯2'],
+	['Es', 'E♭2'],
+	['As', 'A♭2'],
+	['c', 'C3'],
+	['fis', 'F♯3'],
+	["c'", 'C4'],
+	["ces'", 'C♭4'],
+	["b'", 'B♭4'],
+	["h''", 'B5'],
+	["des'''", 'D♭6']
+] as [Note, string][])('toEnglishNoteName(%s) = %s', (note, english) => {
+	expect(toEnglishNoteName(note)).toBe(english);
 });

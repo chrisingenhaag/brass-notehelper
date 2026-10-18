@@ -187,3 +187,13 @@ export function getStaffPosition(note: Note, system: ScoreSystem): number {
 export function isValidNote(instrument: Instrument, note: string): note is Note {
 	return instrumentConfig[instrument].combinations.some((combination) => combination.note === note);
 }
+
+// German Helmholtz name (e.g. "B", "fis'") → English scientific pitch (e.g. "B♭2", "F♯4"); c' = C4
+export function toEnglishNoteName(note: Note): string {
+	const name = note.replace(/'/g, '');
+	const octave = (name[0] === name[0].toUpperCase() ? 2 : 3) + note.length - name.length;
+	const [letter, suffix] = [name[0].toLowerCase(), name.slice(1)];
+	if (letter === 'b') return `B♭${octave}`; // German b = B♭, German h = B
+	const accidental = suffix === 'is' ? '♯' : suffix ? '♭' : '';
+	return `${letter === 'h' ? 'B' : letter.toUpperCase()}${accidental}${octave}`;
+}
