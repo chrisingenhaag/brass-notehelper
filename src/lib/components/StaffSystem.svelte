@@ -81,13 +81,20 @@
 	<!-- Ledger Lines -->
 	{#if ledgerLines.length > 0}
 		{#each ledgerLines as y (y)}
-			<line x1="170" y1={y} x2="230" y2={y} stroke="black" stroke-width="1.5" />
+			<line x1="182" y1={y} x2="218" y2={y} stroke="black" stroke-width="1.5" />
 		{/each}
 	{/if}
 
-	<!-- Accidental -->
+	<!-- Accidental: drawn as paths, font glyphs have platform-dependent spacing -->
 	{#if currentAccidental}
-		<text x={165} y={noteY + 8} class="accidental-symbol" fill="black">{currentAccidental}</text>
+		<g transform="translate(0, {noteY})" stroke="black" fill="none">
+			{#if currentAccidental === '♭'}
+				<path d="M 167 -24 V 8 C 175 3 181 -2 177 -5 C 174 -8 169 -5 167 -2" stroke-width="2" />
+			{:else}
+				<path d="M 169 -13 V 15 M 175 -15 V 13" stroke-width="1.5" />
+				<path d="M 165 -2 L 179 -6 M 165 8 L 179 4" stroke-width="3.5" />
+			{/if}
+		</g>
 	{/if}
 
 	<!-- Note -->
@@ -106,9 +113,5 @@
 		background-color: #f0f0f0;
 		width: 100%;
 		height: auto;
-	}
-	.accidental-symbol {
-		font-family: 'Times New Roman', serif;
-		font-size: 36px;
 	}
 </style>
