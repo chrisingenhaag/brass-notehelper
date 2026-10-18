@@ -25,3 +25,21 @@ test.describe('english browser', () => {
 		);
 	});
 });
+
+test.describe('note names', () => {
+	test.use({ locale: 'en-US' });
+
+	test('english browser sees english note names', async ({ page }) => {
+		await page.goto('/instrument/trombone');
+		await expect(page.locator('.note-value')).toContainText('B♭2');
+	});
+});
+
+test.describe('german note names', () => {
+	test.use({ locale: 'de-DE' });
+
+	test('german browser keeps german note names', async ({ page }) => {
+		await page.goto('/instrument/trombone');
+		await expect(page.locator('.note-value')).toHaveText(/^\s*B\s*\(1\)\s*$/);
+	});
+});
