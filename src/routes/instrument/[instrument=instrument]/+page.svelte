@@ -4,6 +4,7 @@
 		getNextNote,
 		getPreviousNote,
 		getInstrumentPosition,
+		getCombinationsForInstrument,
 		instrumentStaffSystemMap,
 		isValidNote,
 		type Note,
@@ -40,8 +41,8 @@
 		touchStartY = event.touches[0].clientY;
 	}
 
+	// no preventDefault: Svelte registers touchmove as passive; touch-action: none stops scrolling
 	function handleTouchMove(event: TouchEvent) {
-		event.preventDefault(); // Prevent scrolling
 		const touchCurrentY = event.touches[0].clientY;
 		const deltaY = touchCurrentY - touchStartY;
 
@@ -89,6 +90,8 @@
 			? getInstrumentPosition(selectedInstrument, currentNote)
 			: []
 	);
+	let combinations = $derived(getCombinationsForInstrument(selectedInstrument));
+	let noteIndex = $derived(combinations.findIndex((c) => c.note === currentNote));
 </script>
 
 <div class="mt-2 text-center">
@@ -105,6 +108,13 @@
 
 <div
 	class="staff-container flex justify-center"
+	role="slider"
+	tabindex="0"
+	aria-label={$_('instruments.' + selectedInstrument)}
+	aria-valuemin={0}
+	aria-valuemax={combinations.length - 1}
+	aria-valuenow={noteIndex}
+	aria-valuetext={[currentNote, ...instrumentPositions].join(' ')}
 	ontouchstart={handleTouchStart}
 	ontouchmove={handleTouchMove}
 	onwheel={handleWheel}
