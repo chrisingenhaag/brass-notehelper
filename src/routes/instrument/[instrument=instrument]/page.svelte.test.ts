@@ -12,7 +12,7 @@ describe('/instrument/[instrument]/+page.svelte', () => {
 	init({ fallbackLocale: 'de', initialLocale: 'de' });
 
 	test('shows the selected instrument and its start note with position', () => {
-		render(Page, { data: {}, params: { instrument: Instrument.Trombone } });
+		render(Page, { data: { lang: 'de' }, params: { instrument: Instrument.Trombone } });
 		expect(
 			screen.getByText(
 				'Wische oder scrolle über die Note oder nutze die Pfeile, um sie zu verändern.'

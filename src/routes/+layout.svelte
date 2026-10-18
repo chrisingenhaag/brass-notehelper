@@ -2,10 +2,16 @@
 	import '../app.css';
 	import '../lib/i18n';
 
-	import { _ } from 'svelte-i18n';
+	import { _, locale } from 'svelte-i18n';
 	import { resolve } from '$app/paths';
 
-	let { children } = $props();
+	let { children, data } = $props();
+
+	// The svelte-i18n store is global on the server. Setting it here, synchronously at the
+	// start of rendering, means no other request can switch it before this page is rendered.
+	// Messages are already loaded by +layout.ts, so set() takes effect immediately.
+	// svelte-ignore state_referenced_locally
+	locale.set(data.lang);
 </script>
 
 <svelte:head>
