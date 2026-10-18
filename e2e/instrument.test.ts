@@ -24,3 +24,22 @@ test('staff is an accessible slider that follows arrow keys', async ({ page }) =
 	await page.keyboard.press('ArrowUp');
 	await expect(slider).toHaveAttribute('aria-valuenow', String(start + 1));
 });
+
+test('arrow buttons change the note and disable at the range ends', async ({ page }) => {
+	await page.goto('/instrument/trombone');
+	const slider = page.getByRole('slider');
+	const up = page.getByRole('button', { name: 'Higher note' });
+	const down = page.getByRole('button', { name: 'Lower note' });
+	const max = await slider.getAttribute('aria-valuemax');
+
+	const start = Number(await slider.getAttribute('aria-valuenow'));
+	await up.click();
+	await expect(slider).toHaveAttribute('aria-valuenow', String(start + 1));
+	await down.click();
+	await expect(slider).toHaveAttribute('aria-valuenow', String(start));
+
+	while (await down.isEnabled()) await down.click();
+	await expect(slider).toHaveAttribute('aria-valuenow', '0');
+	while (await up.isEnabled()) await up.click();
+	await expect(slider).toHaveAttribute('aria-valuenow', max!);
+});

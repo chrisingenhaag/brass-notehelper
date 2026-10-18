@@ -21,11 +21,19 @@
 	// writable derived: resets to the start note when the instrument changes
 	let selectedNote: Note = $derived(instrumentConfig[selectedInstrument].startNote);
 
+	function noteUp() {
+		selectedNote = getNextNote(selectedInstrument, selectedNote);
+	}
+
+	function noteDown() {
+		selectedNote = getPreviousNote(selectedInstrument, selectedNote);
+	}
+
 	function handleKeydown(event: { key: string }) {
 		if (event.key === 'ArrowUp') {
-			selectedNote = getNextNote(selectedInstrument, selectedNote);
+			noteUp();
 		} else if (event.key === 'ArrowDown') {
-			selectedNote = getPreviousNote(selectedInstrument, selectedNote);
+			noteDown();
 		}
 	}
 
@@ -45,10 +53,10 @@
 		if (Math.abs(deltaY) > TOUCH_SENSITIVITY) {
 			if (deltaY < 0) {
 				// Swipe up
-				selectedNote = getNextNote(selectedInstrument, selectedNote);
+				noteUp();
 			} else {
 				// Swipe down
-				selectedNote = getPreviousNote(selectedInstrument, selectedNote);
+				noteDown();
 			}
 			touchStartY = touchCurrentY;
 		}
@@ -65,10 +73,10 @@
 		if (Math.abs(scrolledAmount) > SCROLL_SENSITIVITY) {
 			if (event.deltaY < 0) {
 				// Scroll up
-				selectedNote = getNextNote(selectedInstrument, selectedNote);
+				noteUp();
 			} else {
 				// Scroll down
-				selectedNote = getPreviousNote(selectedInstrument, selectedNote);
+				noteDown();
 			}
 			scrolledAmount = 0; // Reset after processing
 		}
@@ -116,6 +124,21 @@
 	onwheel={handleWheel}
 >
 	<StaffSystem note={selectedNote} {system} />
+</div>
+
+<div class="mb-4 flex justify-center gap-6">
+	<button
+		class="btn btn-circle btn-lg"
+		aria-label={$_('noteDown')}
+		disabled={noteIndex <= 0}
+		onclick={noteDown}>▼</button
+	>
+	<button
+		class="btn btn-circle btn-lg"
+		aria-label={$_('noteUp')}
+		disabled={noteIndex >= combinations.length - 1}
+		onclick={noteUp}>▲</button
+	>
 </div>
 
 <style>
