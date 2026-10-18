@@ -1,16 +1,15 @@
-import { describe, test, expect, beforeAll } from 'vitest';
+import { describe, test, expect } from 'vitest';
 import '@testing-library/jest-dom/vitest';
 import { render, screen } from '@testing-library/svelte';
 import Page from './+page.svelte';
-import '$lib/i18n';
-import { locale, waitLocale } from 'svelte-i18n';
+import { addMessages, init } from 'svelte-i18n';
+import de from '$lib/i18n/locales/de.json';
 import { Instrument } from '$lib/positionBase';
 
 describe('/instrument/[instrument]/+page.svelte', () => {
-	beforeAll(async () => {
-		locale.set('de');
-		await waitLocale();
-	});
+	// synchronous setup: $lib/i18n loads the browser locale async, which races with the test
+	addMessages('de', de);
+	init({ fallbackLocale: 'de', initialLocale: 'de' });
 
 	test('shows the selected instrument and its start note with position', () => {
 		render(Page, { data: {}, params: { instrument: Instrument.Trombone } });
