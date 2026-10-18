@@ -7,7 +7,15 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-	plugins: [tailwindcss(), sveltekit({ preprocess: vitePreprocess(), adapter: adapter() })],
+	plugins: [
+		tailwindcss(),
+		sveltekit({
+			preprocess: vitePreprocess(),
+			adapter: adapter(),
+			// public origin (replaces adapter-node's ORIGIN env var, removed in SvelteKit 3)
+			paths: { origin: 'https://brasshelper.ingenhaag.dev' }
+		})
+	],
 	test: {
 		projects: [
 			{
