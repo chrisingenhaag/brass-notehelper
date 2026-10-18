@@ -26,11 +26,6 @@
 	"textElements": {
 		"or": "or"
 	},
-	"settings": {
-		"title": "Settings",
-		"instrument": "choosed instrument",
-		"back": "Back"
-	},
 	"about": {
 		"title": "About Note Helper",
 		"intro": "Note Helper is an interactive learning aid for brass players – for trombone, horn, tuba and trumpet.",
