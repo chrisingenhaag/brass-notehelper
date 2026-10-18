@@ -1,5 +1,5 @@
 import { defineParams } from '@sveltejs/kit/params';
-import { Instrument } from '#lib/positionBase.js';
+import { Instrument } from '#lib/instrument.ts';
 
 const matchInstrument = (param: string): param is Instrument =>
 	(Object.values(Instrument) as string[]).includes(param);

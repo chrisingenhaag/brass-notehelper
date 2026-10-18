@@ -6,6 +6,9 @@ import {
 	trumpetCombinations,
 	tubaCombinations
 } from './instrumentPositions';
+import { Instrument } from './instrument';
+
+export { Instrument };
 
 export type Note =
 	| 'Cis'
@@ -115,13 +118,6 @@ export interface NoteInfo {
 export interface Combination {
 	note: Note;
 	positions: Position[];
-}
-
-export enum Instrument {
-	Trombone = 'trombone',
-	Horn = 'horn',
-	Tuba = 'tuba',
-	Trumpetc = 'trumpetc'
 }
 
 export interface InstrumentConfig {
