@@ -3,6 +3,7 @@ import { browser } from '$app/environment';
 import { init, register } from 'svelte-i18n';
 
 export const defaultLocale = 'de';
+export const supportedLocales = ['de', 'en'];
 
 register('en', () => import('./locales/en.json'));
 register('de', () => import('./locales/de.json'));
