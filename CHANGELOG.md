@@ -1,3 +1,15 @@
+## [0.4.1](https://github.com/chrisingenhaag/brass-notehelper/compare/v0.4.0...v0.4.1) (2026-10-18)
+
+
+### Bug Fixes
+
+* drop clef from instrument url and 404 unknown instruments ([350febc](https://github.com/chrisingenhaag/brass-notehelper/commit/350febc7462adf5e6b641121c2750c9cb7e9d0c2))
+* expose staff as accessible slider ([d333920](https://github.com/chrisingenhaag/brass-notehelper/commit/d333920f58d003c8f1fc06b2bb61f48b61d0895a))
+* localize meta tags and correct about/welcome texts ([8ac5207](https://github.com/chrisingenhaag/brass-notehelper/commit/8ac5207a33aed83ad251942876628244bb6b567d))
+* order trumpet notes from low to high ([fddc8dd](https://github.com/chrisingenhaag/brass-notehelper/commit/fddc8dd5c0ba4bb99bf1d21a9e15fba21fa5ef6c))
+* remove trailing space from note name 'As' ([74453b1](https://github.com/chrisingenhaag/brass-notehelper/commit/74453b189842aa90a6e83aae98c56c38a20bac89))
+* set html lang attribute per request ([b6cd80f](https://github.com/chrisingenhaag/brass-notehelper/commit/b6cd80fb2a8e4e3cd01a5dcf9d6970564d20907a))
+
 # [0.4.0](https://github.com/chrisingenhaag/brass-notehelper/compare/v0.3.1...v0.4.0) (2026-04-19)
 
 
