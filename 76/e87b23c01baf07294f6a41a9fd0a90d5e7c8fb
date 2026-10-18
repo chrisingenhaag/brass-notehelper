@@ -1,0 +1,26 @@
+e2e/lang.test.ts
+  s_e4e97453404912::t_8984ced32aa372 28-45
+src/lib/positionBase.test.ts
+  s_e4e97453404912::t_df4347812a5e02 12,50-65
+  s_e4e97453404912::t_1cf164a2a94480 66
+src/routes/instrument/[instrument=instrument]/+page.svelte
+  s_e4e97453404912::t_8984ced32aa372 9,12,92-94,103,117
+src/lib/positionBase.ts
+  s_e4e97453404912::t_df4347812a5e02 190-199
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "76e87b23c01baf07294f6a41a9fd0a90d5e7c8fb",
+  "prompts": {},
+  "sessions": {
+    "s_e4e97453404912": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a01b90cd-11aa-477f-96dc-1a079b521bfd",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Christian Ingenhaag <christian.ingenhaag@googlemail.com>"
+    }
+  }
+}
