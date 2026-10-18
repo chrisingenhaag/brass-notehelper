@@ -1,3 +1,11 @@
+# [0.5.0](https://github.com/chrisingenhaag/brass-notehelper/compare/v0.4.1...v0.5.0) (2026-10-18)
+
+
+### Features
+
+* add buttons to step the note up and down ([ec4d497](https://github.com/chrisingenhaag/brass-notehelper/commit/ec4d497c2e4b1b807d2aed55cdb2a75c7bc26a0a))
+* show english note names for english locale ([4c32933](https://github.com/chrisingenhaag/brass-notehelper/commit/4c32933d3dbb19a0ed08c353e9a2f449571b24b6))
+
 ## [0.4.1](https://github.com/chrisingenhaag/brass-notehelper/compare/v0.4.0...v0.4.1) (2026-10-18)
 
 
