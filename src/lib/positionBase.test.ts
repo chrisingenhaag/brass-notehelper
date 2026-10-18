@@ -1,22 +1,20 @@
 import { describe, expect, test } from 'vitest';
 import { NoteBasesInBassClef, NoteBasesInTrebleClef } from './instrumentPositions';
 import {
-	getCombinationsForInstrument,
 	getInstrumentPosition,
 	getNextNote,
 	getPreviousNote,
 	getStaffPosition,
-	getStartNoteForInstrument,
 	Instrument,
-	instrumentStaffSystemMap,
+	instrumentConfig,
 	isValidNote,
 	ScoreSystem,
 	type Note
 } from './positionBase';
 
 describe.each(Object.values(Instrument))('%s', (instrument) => {
-	const system = instrumentStaffSystemMap[instrument];
-	const notes = getCombinationsForInstrument(instrument).map((c) => c.note);
+	const { system, startNote, combinations } = instrumentConfig[instrument];
+	const notes = combinations.map((c) => c.note);
 
 	test('combinations go from low to high, so "next" is always up', () => {
 		const staffPositions = notes.map((note) => getStaffPosition(note, system));
@@ -31,7 +29,7 @@ describe.each(Object.values(Instrument))('%s', (instrument) => {
 	});
 
 	test('start note belongs to the instrument', () => {
-		expect(isValidNote(instrument, getStartNoteForInstrument(instrument))).toBe(true);
+		expect(isValidNote(instrument, startNote)).toBe(true);
 	});
 
 	test('next/previous move one step and stop at the range ends', () => {
