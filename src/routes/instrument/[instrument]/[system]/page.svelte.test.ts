@@ -8,7 +8,6 @@ import { Instrument, ScoreSystem } from '$lib/positionBase';
 describe('/+page.svelte', () => {
 	locale.set('de');
 
-
 	test('should render h1', () => {
 		render(Page, {
 			data: {
