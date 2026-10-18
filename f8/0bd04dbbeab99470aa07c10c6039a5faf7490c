@@ -1,0 +1,35 @@
+package.json
+  s_e4e97453404912::t_b5f91b2fb5efec 57-60
+src/hooks.server.ts
+  s_e4e97453404912::t_9d8e9fd1755bb3 4
+src/lib/components/StaffSystem.svelte
+  s_e4e97453404912::t_e417e3f4667a89 2-3
+src/lib/components/StaffSystem.svelte.test.ts
+  s_e4e97453404912::t_e4211c27abb304 4
+src/params.ts
+  s_e4e97453404912::t_8e6b996b7d0b72 2
+src/routes/+layout.ts
+  s_e4e97453404912::t_4bacc4c65edfe8 3,6
+src/routes/+page.svelte
+  s_e4e97453404912::t_4f742893029f65 2
+src/routes/instrument/[instrument=instrument]/+page.svelte
+  s_e4e97453404912::t_2160071c1a205b 11,13
+src/routes/instrument/[instrument=instrument]/page.svelte.test.ts
+  s_e4e97453404912::t_3d056d7d006c14 6-7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f80bd04dbbeab99470aa07c10c6039a5faf7490c",
+  "prompts": {},
+  "sessions": {
+    "s_e4e97453404912": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a01b90cd-11aa-477f-96dc-1a079b521bfd",
+        "model": "unknown"
+      },
+      "human_author": "Christian Ingenhaag <christian.ingenhaag@googlemail.com>"
+    }
+  }
+}
