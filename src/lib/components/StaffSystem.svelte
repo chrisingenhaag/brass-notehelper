@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { NoteBasesInBassClef, NoteBasesInTrebleClef } from '$lib/instrumentPositions';
-	import { getStaffPosition, type Note, ScoreSystem } from '$lib/positionBase';
+	import { NoteBasesInBassClef, NoteBasesInTrebleClef } from '#lib/instrumentPositions.js';
+	import { getStaffPosition, type Note, ScoreSystem } from '#lib/positionBase.js';
 
 	let {
 		note,

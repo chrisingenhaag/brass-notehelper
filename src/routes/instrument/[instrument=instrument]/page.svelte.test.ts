@@ -3,8 +3,8 @@ import '@testing-library/jest-dom/vitest';
 import { render, screen } from '@testing-library/svelte';
 import Page from './+page.svelte';
 import { addMessages, init } from 'svelte-i18n';
-import de from '$lib/i18n/locales/de.json';
-import { Instrument } from '$lib/positionBase';
+import de from '#lib/i18n/locales/de.json';
+import { Instrument } from '#lib/positionBase.js';
 
 describe('/instrument/[instrument]/+page.svelte', () => {
 	// synchronous setup: $lib/i18n loads the browser locale async, which races with the test

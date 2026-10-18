@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Instrument } from '$lib/positionBase';
+	import { Instrument } from '#lib/positionBase.js';
 	import { _ } from 'svelte-i18n';
 	import { resolve } from '$app/paths';
 

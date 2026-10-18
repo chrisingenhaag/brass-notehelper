@@ -8,9 +8,9 @@
 		isValidNote,
 		toEnglishNoteName,
 		type Note
-	} from '$lib/positionBase';
+	} from '#lib/positionBase.js';
 	import { _, locale } from 'svelte-i18n';
-	import StaffSystem from '$lib/components/StaffSystem.svelte';
+	import StaffSystem from '#lib/components/StaffSystem.svelte';
 	import type { PageProps } from './$types';
 
 	let { params }: PageProps = $props();
