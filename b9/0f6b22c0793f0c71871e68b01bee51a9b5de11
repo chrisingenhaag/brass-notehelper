@@ -1,0 +1,32 @@
+src/routes/instrument/[instrument=instrument]/page.svelte.test.ts
+  s_e4e97453404912::t_92d0faddb0e564 1-17
+src/routes/instrument/[instrument=instrument]/[system]/+page.ts
+  s_e4e97453404912::t_62be945251d035 1-8
+README.md
+  s_e4e97453404912::t_76b144f85077b1 60
+src/params/instrument.ts
+  s_e4e97453404912::t_fd267fdfa57815 1-5
+src/routes/+page.svelte
+  s_e4e97453404912::t_92d0faddb0e564 2,18-19
+e2e/instrument.test.ts
+  s_e4e97453404912::t_1d66f0e0d2f2a5 1-18
+src/routes/instrument/[instrument=instrument]/+page.svelte
+  s_e4e97453404912::t_1cdd894ecb366f 7-23
+  s_e4e97453404912::t_92d0faddb0e564 96
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b90f6b22c0793f0c71871e68b01bee51a9b5de11",
+  "prompts": {},
+  "sessions": {
+    "s_e4e97453404912": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a01b90cd-11aa-477f-96dc-1a079b521bfd",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Christian Ingenhaag <christian.ingenhaag@googlemail.com>"
+    }
+  }
+}
