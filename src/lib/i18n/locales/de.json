@@ -8,8 +8,8 @@
 		"description": "Wähle ein Instrument aus, um passende Noten und Positionen zu entdecken."
 	},
 	"meta": {
-		"description": "Interaktiver Notenhelfer für Posaune. Lernen Sie die Positionen der Noten im Bassschlüssel und die entsprechenden Zugpositionen auf der Posaune.",
-		"keywords": "Posaune, Notenhelfer, Bassschlüssel, Musikunterricht, Zugpositionen"
+		"description": "Interaktiver Notenhelfer für Blechbläser:innen. Lerne die Noten im Bass- und Violinschlüssel und die passenden Zug- und Ventilpositionen für Posaune, Horn, Tuba und Trompete.",
+		"keywords": "Posaune, Horn, Tuba, Trompete, Notenhelfer, Bassschlüssel, Violinschlüssel, Zugpositionen, Griffe, Musikunterricht"
 	},
 	"menu": {
 		"items": {
@@ -31,20 +31,19 @@
 		"instrument": "gewähltes Instrument",
 		"back": "Zurück"
 	},
-
 	"about": {
 		"title": "Über Notenhelferlein",
-		"intro": "Notenhelferlein ist eine interaktive Lernhilfe für Blechbläser:innen, insbesondere für Posaune, Trompete und Horn.",
+		"intro": "Notenhelferlein ist eine interaktive Lernhilfe für Blechbläser:innen – für Posaune, Horn, Tuba und Trompete.",
 		"featuresTitle": "Funktionen",
-		"feature1": "Zeigt Noten im Bassschlüssel auf einer Notenlinie an",
+		"feature1": "Zeigt Noten im Bass- oder Violinschlüssel auf einer Notenlinie an",
 		"feature2": "Visualisiert die passenden Zug- oder Ventilpositionen für das gewählte Instrument",
-		"feature3": "Blättern oder wischen Sie durch die Noten – ideal für Touch und Desktop",
+		"feature3": "Blättern, wischen oder mit den Pfeiltasten durch die Noten – ideal für Touch und Desktop",
 		"feature4": "Automatische Anpassung an verschiedene Instrumente",
 		"feature5": "Mehrsprachige Oberfläche (Deutsch/Englisch)",
-		"feature6": "Einfache Einstellungen für Instrument und Sprache",
+		"feature6": "Die Sprache richtet sich automatisch nach der Browsereinstellung",
 		"usageTitle": "Wie funktioniert es?",
-		"usage1": "Wählen Sie Ihr Instrument in den Einstellungen aus.",
-		"usage2": "Scrollen oder wischen Sie, um verschiedene Noten zu sehen.",
+		"usage1": "Wählen Sie auf der Startseite Ihr Instrument aus.",
+		"usage2": "Scrollen, wischen oder nutzen Sie die Pfeiltasten, um verschiedene Noten zu sehen.",
 		"usage3": "Die passenden Positionen werden direkt angezeigt."
 	}
 }
